@@ -62,6 +62,12 @@
     <Compile Include="GoodSetBLL.cs" />
     <Compile Include="LabelRecordBLL.cs" />
     <Compile Include="LogHelper.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="PrintSetBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLiteHelper.cs" />
@@ -74,7 +80,30 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Release\LabelPrintDAL.csprojResolveAssemblyReference.cache" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\LabelPrintDAL.dll" />
+    <Content Include="bin\Debug\LabelPrintDAL.pdb" />
+    <Content Include="bin\Release\AsposeLicense.dll" />
+    <Content Include="bin\Release\FPLabelData.dll" />
+    <Content Include="bin\Release\FPLabelData.pdb" />
+    <Content Include="bin\Release\LabelPrintDAL.dll" />
+    <Content Include="bin\Release\LabelPrintDAL.pdb" />
+    <Content Include="bin\Release\log4net.dll" />
+    <Content Include="bin\Release\log4net.xml" />
+    <Content Include="bin\Release\Newtonsoft.Json.dll" />
+    <Content Include="bin\Release\Newtonsoft.Json.xml" />
+    <Content Include="bin\Release\Pivots.dll" />
+    <Content Include="bin\Release\System.Data.SQLite.dll" />
+    <Content Include="obj\Release\LabelPrintDAL.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\LabelPrintDAL.dll" />
+    <Content Include="obj\Release\LabelPrintDAL.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Release\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
