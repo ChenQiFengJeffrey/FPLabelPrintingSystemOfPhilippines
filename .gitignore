@@ -3,3 +3,16 @@
 ################################################################################
 
 /ConsoleApp1/bin/Debug
+/ConsoleApp1/obj
+/FPLabelData/bin
+/FPLabelData/obj
+/FPLabelPrintingClient/bin
+/FPLabelPrintingClient/obj
+/FPLabelPrintingSystemOfPhilippines/obj
+/FPLabelPrintingSystemOfPhilippines/bin
+/FPLabelPrintingWcfService/bin
+/FPLabelPrintingWcfService/obj
+/LabelPrintDAL/bin
+/LabelPrintDAL/obj
+/LabelReporting/obj
+/LabelReporting/bin

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="84b7860e-4807-4431-963f-668a5e0aa728" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:10001/FPLabelPrintingWcfService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="8ff2ae90-aec5-4b71-8d50-49b3b4d6aec8" SourceId="1" SourceUrl="http://127.0.0.1:10001/FPLabelPrintingWcfService/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="4ef0ba92-fe2f-446d-a065-385a0c9f4215" SourceId="1" SourceUrl="http://127.0.0.1:10001/FPLabelPrintingWcfService/?xsd=xsd2" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="730177e0-d832-4c1e-8ade-4b5b70b55800" SourceId="1" SourceUrl="http://127.0.0.1:10001/FPLabelPrintingWcfService/?xsd=xsd3" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="25de8729-80f1-4583-bedb-c59d6aeddefb" SourceId="1" SourceUrl="http://127.0.0.1:10001/FPLabelPrintingWcfService/?xsd=xsd0" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="09303a70-2e94-4618-a78c-8838d1c8a8d5" SourceId="1" SourceUrl="http://127.0.0.1:10001/FPLabelPrintingWcfService/?xsd=xsd1" />
+    <MetadataFile FileName="PrintSetService.wsdl" MetadataType="Wsdl" ID="9fa36c34-51c7-4910-b889-67ca6bdd2655" SourceId="1" SourceUrl="http://127.0.0.1:10001/FPLabelPrintingWcfService/?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

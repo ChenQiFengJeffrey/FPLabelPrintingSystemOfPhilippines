@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FPLabelData" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FPLabelData" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfFinishedProductLabelDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FinishedProductLabelDTO" nillable="true" type="tns:FinishedProductLabelDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFinishedProductLabelDTO" nillable="true" type="tns:ArrayOfFinishedProductLabelDTO" />
+  <xs:complexType name="FinishedProductLabelDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="A" type="xs:boolean" />
+      <xs:element minOccurs="0" name="B" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BIZBOX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Barcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="C" type="xs:boolean" />
+      <xs:element minOccurs="0" name="COPPERDATAONLY" type="xs:boolean" />
+      <xs:element minOccurs="0" name="D" type="xs:boolean" />
+      <xs:element minOccurs="0" name="E" type="xs:boolean" />
+      <xs:element minOccurs="0" name="F" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FTTH" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FTTHDATAONLY" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FTTHNONWIFI" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FTTHNONWIFIDATAONLY" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FinishedProductNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="G" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GoodList" nillable="true" type="tns:ArrayOfGoodSet" />
+      <xs:element minOccurs="0" name="H" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HOME" type="xs:boolean" />
+      <xs:element minOccurs="0" name="I" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="J" type="xs:boolean" />
+      <xs:element minOccurs="0" name="K" type="xs:boolean" />
+      <xs:element minOccurs="0" name="L" type="xs:boolean" />
+      <xs:element minOccurs="0" name="M" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MSI" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MSIVOICEONLY" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ONU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SME" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TELSET" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VVDSL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkStation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FinishedProductLabelDTO" nillable="true" type="tns:FinishedProductLabelDTO" />
+  <xs:complexType name="ArrayOfGoodSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GoodSet" nillable="true" type="tns:GoodSet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGoodSet" nillable="true" type="tns:ArrayOfGoodSet" />
+  <xs:complexType name="GoodSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FinishedProductNum" type="xs:int" />
+      <xs:element minOccurs="0" name="MaterialName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaterialNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oid" type="xs:int" />
+      <xs:element minOccurs="0" name="QTY" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GoodSet" nillable="true" type="tns:GoodSet" />
+</xs:schema>

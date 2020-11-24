@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLabelPrintingSystemOfPhilippines", "FPLabelPrintingSystemOfPhilippines\FPLabelPrintingSystemOfPhilippines.csproj", "{DCECA0A7-8524-4C81-8E81-967BA852586D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{01EA2F5C-F609-4D17-9192-8608DCE048E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabelPrintDAL", "LabelPrintDAL\LabelPrintDAL.csproj", "{FD73FC8F-433A-459D-864E-6ED7C043EB6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabelReporting", "LabelReporting\LabelReporting.csproj", "{44D4DF24-5FE2-4826-9303-DAF0A222F40D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLabelData", "FPLabelData\FPLabelData.csproj", "{D4C9124F-5537-4CBF-9D47-20C0571EA57F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLabelPrintingWcfService", "FPLabelPrintingWcfService\FPLabelPrintingWcfService.csproj", "{869C1013-41EA-48E9-955E-7B6D324E1AD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLabelPrintingClient", "FPLabelPrintingClient\FPLabelPrintingClient.csproj", "{6A6E892A-BF0B-4598-A9A4-23E71C98EFCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCECA0A7-8524-4C81-8E81-967BA852586D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCECA0A7-8524-4C81-8E81-967BA852586D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCECA0A7-8524-4C81-8E81-967BA852586D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCECA0A7-8524-4C81-8E81-967BA852586D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01EA2F5C-F609-4D17-9192-8608DCE048E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01EA2F5C-F609-4D17-9192-8608DCE048E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01EA2F5C-F609-4D17-9192-8608DCE048E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01EA2F5C-F609-4D17-9192-8608DCE048E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD73FC8F-433A-459D-864E-6ED7C043EB6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD73FC8F-433A-459D-864E-6ED7C043EB6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD73FC8F-433A-459D-864E-6ED7C043EB6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD73FC8F-433A-459D-864E-6ED7C043EB6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D4DF24-5FE2-4826-9303-DAF0A222F40D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D4DF24-5FE2-4826-9303-DAF0A222F40D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D4DF24-5FE2-4826-9303-DAF0A222F40D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D4DF24-5FE2-4826-9303-DAF0A222F40D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C9124F-5537-4CBF-9D47-20C0571EA57F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C9124F-5537-4CBF-9D47-20C0571EA57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C9124F-5537-4CBF-9D47-20C0571EA57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C9124F-5537-4CBF-9D47-20C0571EA57F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{869C1013-41EA-48E9-955E-7B6D324E1AD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{869C1013-41EA-48E9-955E-7B6D324E1AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{869C1013-41EA-48E9-955E-7B6D324E1AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{869C1013-41EA-48E9-955E-7B6D324E1AD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A6E892A-BF0B-4598-A9A4-23E71C98EFCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A6E892A-BF0B-4598-A9A4-23E71C98EFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A6E892A-BF0B-4598-A9A4-23E71C98EFCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A6E892A-BF0B-4598-A9A4-23E71C98EFCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

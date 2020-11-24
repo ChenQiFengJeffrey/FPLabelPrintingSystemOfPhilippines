@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="FPLabelPrintingWcfService.PrintSetService" CodeBehind="PrintSetService.svc.cs" %>
