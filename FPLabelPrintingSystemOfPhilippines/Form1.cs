@@ -154,38 +154,40 @@ namespace FPLabelPrintingSystemOfPhilippines
             _labelRecordTable = new DataTable();
             _labelRecordTable.Columns.Add(record.CreateTime, typeof(DateTime));//0
             _labelRecordTable.Columns.Add(record.WorkStation, typeof(string));//1
-            _labelRecordTable.Columns.Add(record.FinishedProductNum, typeof(string));//2
-            _labelRecordTable.Columns.Add(record.Oid, typeof(string));//3
-            _labelRecordTable.Columns.Add(record.ID, typeof(string));//4
-            _labelRecordTable.Columns.Add(record.A, typeof(bool));//5
-            _labelRecordTable.Columns.Add(record.B, typeof(bool));//6
-            _labelRecordTable.Columns.Add(record.C, typeof(bool));//7
-            _labelRecordTable.Columns.Add(record.D, typeof(bool));//8
-            _labelRecordTable.Columns.Add(record.E, typeof(bool));//9
-            _labelRecordTable.Columns.Add(record.F, typeof(bool));//10
-            _labelRecordTable.Columns.Add(record.G, typeof(bool));//11
-            _labelRecordTable.Columns.Add(record.H, typeof(bool));//12
-            _labelRecordTable.Columns.Add(record.I, typeof(bool));//13
-            _labelRecordTable.Columns.Add(record.J, typeof(bool));//14
-            _labelRecordTable.Columns.Add(record.K, typeof(bool));//15
-            _labelRecordTable.Columns.Add(record.L, typeof(bool));//16
-            _labelRecordTable.Columns.Add(record.M, typeof(bool));//17
-            _labelRecordTable.Columns.Add(record.HOME, typeof(bool));//18
-            _labelRecordTable.Columns.Add(record.SME, typeof(bool));//19
-            _labelRecordTable.Columns.Add(record.MSI, typeof(bool));//20
-            _labelRecordTable.Columns.Add(record.FTTH, typeof(bool));//21
-            _labelRecordTable.Columns.Add(record.MSIVOICEONLY, typeof(bool));//22
-            _labelRecordTable.Columns.Add(record.COPPERDATAONLY, typeof(bool));//23
-            _labelRecordTable.Columns.Add(record.FTTHDATAONLY, typeof(bool));//24
-            _labelRecordTable.Columns.Add(record.FTTHNONWIFI, typeof(bool));//25
-            _labelRecordTable.Columns.Add(record.FTTHNONWIFIDATAONLY, typeof(bool));//26
-            _labelRecordTable.Columns.Add(record.ONU, typeof(string));//27
-            _labelRecordTable.Columns.Add(record.VVDSL, typeof(string));//28
-            _labelRecordTable.Columns.Add(record.TELSET, typeof(string));//29
-            _labelRecordTable.Columns.Add(record.BIZBOX, typeof(string));//30
-            _labelRecordTable.Columns.Add(record.Barcode, typeof(string));//31
-            _labelRecordTable.Columns.Add(record.GoodList, typeof(string));//32
-            bindGrid(dataGridView3, _labelRecordTable, new int[] { 3 });
+            _labelRecordTable.Columns.Add(record.RoNumber, typeof(string));//2
+            _labelRecordTable.Columns.Add(record.FinishedProductNum, typeof(string));//3
+            _labelRecordTable.Columns.Add(record.Oid, typeof(string));//4
+            _labelRecordTable.Columns.Add(record.ID, typeof(string));//5
+            _labelRecordTable.Columns.Add(record.A, typeof(bool));//6
+            _labelRecordTable.Columns.Add(record.B, typeof(bool));//7
+            _labelRecordTable.Columns.Add(record.C, typeof(bool));//8
+            _labelRecordTable.Columns.Add(record.D, typeof(bool));//9
+            _labelRecordTable.Columns.Add(record.E, typeof(bool));//10
+            _labelRecordTable.Columns.Add(record.F, typeof(bool));//11
+            _labelRecordTable.Columns.Add(record.G, typeof(bool));//12
+            _labelRecordTable.Columns.Add(record.H, typeof(bool));//13
+            _labelRecordTable.Columns.Add(record.I, typeof(bool));//14
+            _labelRecordTable.Columns.Add(record.J, typeof(bool));//15
+            _labelRecordTable.Columns.Add(record.K, typeof(bool));//16
+            _labelRecordTable.Columns.Add(record.L, typeof(bool));//17
+            _labelRecordTable.Columns.Add(record.M, typeof(bool));//18
+            _labelRecordTable.Columns.Add(record.HOME, typeof(bool));//19
+            _labelRecordTable.Columns.Add(record.SME, typeof(bool));//20
+            _labelRecordTable.Columns.Add(record.MSI, typeof(bool));//21
+            _labelRecordTable.Columns.Add(record.FTTH, typeof(bool));//22
+            _labelRecordTable.Columns.Add(record.MSIVOICEONLY, typeof(bool));//23
+            _labelRecordTable.Columns.Add(record.COPPERDATAONLY, typeof(bool));//24
+            _labelRecordTable.Columns.Add(record.FTTHDATAONLY, typeof(bool));//25
+            _labelRecordTable.Columns.Add(record.FTTHNONWIFI, typeof(bool));//26
+            _labelRecordTable.Columns.Add(record.FTTHNONWIFIDATAONLY, typeof(bool));//27
+            _labelRecordTable.Columns.Add(record.ONU, typeof(string));//28
+            _labelRecordTable.Columns.Add(record.VVDSL, typeof(string));//29
+            _labelRecordTable.Columns.Add(record.TELSET, typeof(string));//30
+            _labelRecordTable.Columns.Add(record.BIZBOX, typeof(string));//31
+            _labelRecordTable.Columns.Add(record.Barcode, typeof(string));//32
+            _labelRecordTable.Columns.Add(record.GoodList, typeof(string));//33
+            
+            bindGrid(dataGridView3, _labelRecordTable, new int[] { 4 });
         }
         /// <summary>
         /// Form1加载
@@ -278,6 +280,16 @@ namespace FPLabelPrintingSystemOfPhilippines
                 }
             }
         }
+        /// <summary>
+        /// Ro查询/刷新
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button20_Click(object sender, EventArgs e)
+        {
+            Task.Run(() => QueryGoodRoSet());
+            return;
+        }
 
         delegate void QueryGoodRoSetCallbackDel(DataTable dt);
         /// <summary>
@@ -295,7 +307,7 @@ namespace FPLabelPrintingSystemOfPhilippines
                     dt = new SQLiteHelper().ExecuteQuery(queryStrbd.ToString());
 
                     QueryGoodRoSetCallbackDel del = QueryGoodRoSetCallback;
-                    dataGridView1.BeginInvoke(del, dt);
+                    dataGridView5.BeginInvoke(del, dt);
                     return;
                 }
                 catch (Exception ex)
@@ -322,7 +334,7 @@ namespace FPLabelPrintingSystemOfPhilippines
                     row["FinishedProductNum"]
                     );
             }
-            bindGrid(dataGridView1, _goodSetTable, new int[] { 0, 4 });
+            bindGrid(dataGridView1, _goodSetTable, new int[] { 0, 5 });
             return;
         }
         public void QueryGoodRoSetCallback(DataTable dt)
@@ -370,6 +382,37 @@ namespace FPLabelPrintingSystemOfPhilippines
             Form_GoodEditor editor = new Form_GoodEditor(good);
             editor.ShowDialog(this);
             return;
+        }
+
+        /// <summary>
+        /// Ro更新/添加
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button19_Click(object sender, EventArgs e)
+        {
+
+            {
+                RoSet ro = null;
+                DataGridViewSelectedRowCollection rowCollection = dataGridView5.SelectedRows;
+                DataGridViewRow row = null;
+                if (rowCollection.Count > 0)
+                {
+                    row = rowCollection[0];
+                }
+                if (row != null && row.Cells[0].Value != null)
+                {
+                    ro = new RoSet();
+                    int oid = 0;
+                    ro.Oid = int.TryParse(row.Cells[0].Value.ToString().Trim(), out oid) ? oid : 0;
+                    int fpOid = 0;
+                    ro.FinishedProductNum = int.TryParse(row.Cells[3].Value.ToString().Trim(), out fpOid) ? fpOid : 0;
+                    ro.RoNumber = row.Cells[2].Value.ToString().Trim();
+                }
+                Form_GoodRoEditor editor = new Form_GoodRoEditor(ro);
+                editor.ShowDialog(this);
+                return;
+            }
         }
 
         /// <summary>
@@ -1054,6 +1097,7 @@ namespace FPLabelPrintingSystemOfPhilippines
                 _labelRecordTable.Rows.Add(
                     row["CreateTime"],
                     row["WorkStation"],
+                    row["RoNumber"],
                     row["FinishedProductNum"],
                     row["Oid"],
                     row["ID"],
@@ -1087,7 +1131,7 @@ namespace FPLabelPrintingSystemOfPhilippines
                     row["GoodList"]
                     );
             }
-            bindGrid(dataGridView3, _labelRecordTable, new int[] { 3 });
+            bindGrid(dataGridView3, _labelRecordTable, new int[] { 4 });
             return;
         }
         /// <summary>
@@ -1184,6 +1228,25 @@ namespace FPLabelPrintingSystemOfPhilippines
             DeleteRecords("GoodSet", ids);
         }
         /// <summary>
+        /// 成品Ro_删除
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button18_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection rowCollection = dataGridView5.SelectedRows;
+            if (rowCollection.Count == 0)
+            {
+                MessageBox.Show("There aren't records selected");
+            }
+            List<string> ids = new List<string>();
+            foreach (DataGridViewRow row in rowCollection)
+            {
+                ids.Add(row.Cells[0].Value.ToString());
+            }
+            DeleteRecords("RoSet", ids);
+        }
+        /// <summary>
         /// 打印配置_删除
         /// </summary>
         /// <param name="sender"></param>
@@ -1240,6 +1303,9 @@ namespace FPLabelPrintingSystemOfPhilippines
                             case "LabelRecord":
                                 string id = textBox1.Text;
                                 QueryLabelRecord(id, "", "");
+                                break;
+                            case "RoSet":
+                                QueryGoodRoSet();
                                 break;
                             default:
                                 break;
@@ -1454,5 +1520,6 @@ namespace FPLabelPrintingSystemOfPhilippines
                 GC.Collect();
             }
         }
+
     }
 }

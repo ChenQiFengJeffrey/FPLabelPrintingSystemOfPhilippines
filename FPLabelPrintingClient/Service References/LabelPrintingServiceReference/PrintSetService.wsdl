@@ -20,6 +20,12 @@
   <wsdl:message name="IPrintSetService_GetGoodSetByFPNum_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetGoodSetByFPNumResponse" />
   </wsdl:message>
+  <wsdl:message name="IPrintSetService_GetRoSetByFPNum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoSetByFPNum" />
+  </wsdl:message>
+  <wsdl:message name="IPrintSetService_GetRoSetByFPNum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoSetByFPNumResponse" />
+  </wsdl:message>
   <wsdl:message name="IPrintSetService_InsertLabelRecord_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertLabelRecord" />
   </wsdl:message>
@@ -34,6 +40,10 @@
     <wsdl:operation name="GetGoodSetByFPNum">
       <wsdl:input wsaw:Action="http://tempuri.org/IPrintSetService/GetGoodSetByFPNum" message="tns:IPrintSetService_GetGoodSetByFPNum_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPrintSetService/GetGoodSetByFPNumResponse" message="tns:IPrintSetService_GetGoodSetByFPNum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoSetByFPNum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrintSetService/GetRoSetByFPNum" message="tns:IPrintSetService_GetRoSetByFPNum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrintSetService/GetRoSetByFPNumResponse" message="tns:IPrintSetService_GetRoSetByFPNum_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertLabelRecord">
       <wsdl:input wsaw:Action="http://tempuri.org/IPrintSetService/InsertLabelRecord" message="tns:IPrintSetService_InsertLabelRecord_InputMessage" />
@@ -53,6 +63,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetGoodSetByFPNum">
       <soap:operation soapAction="http://tempuri.org/IPrintSetService/GetGoodSetByFPNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoSetByFPNum">
+      <soap:operation soapAction="http://tempuri.org/IPrintSetService/GetRoSetByFPNum" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

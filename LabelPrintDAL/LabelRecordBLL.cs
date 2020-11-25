@@ -54,13 +54,14 @@ namespace LabelPrintDAL
                             SQLiteHelper.MakeSQLiteParameter("@GoodList", DbType.String,JsonConvert.SerializeObject(dto.GoodList)),
                             SQLiteHelper.MakeSQLiteParameter("@WorkStation", DbType.String,dto.WorkStation),
                             SQLiteHelper.MakeSQLiteParameter("@CreateTime", DbType.DateTime,DateTime.Now),
-                            SQLiteHelper.MakeSQLiteParameter("@FinishedProductNum", DbType.String,dto.FinishedProductNum)
+                            SQLiteHelper.MakeSQLiteParameter("@FinishedProductNum", DbType.String,dto.FinishedProductNum),
+                            SQLiteHelper.MakeSQLiteParameter("@RoNumber", DbType.String,dto.RoNumber)
                             };
                     paramList.Add(parameter);
                     //添加新数据
-                    noQueryStrbd.Append(@"Insert into LabelRecord (ID,A,B,C,D,E,F,G,H,I,J,K,L,M,HOME,SME,MSI,FTTH,MSIVOICEONLY,COPPERDATAONLY,FTTHDATAONLY,FTTHNONWIFI,FTTHNONWIFIDATAONLY,ONU,VDSL,TELSET,BIZBOX,Barcode,GoodList,CreateTime,WorkStation,FinishedProductNum) ")
+                    noQueryStrbd.Append(@"Insert into LabelRecord (ID,A,B,C,D,E,F,G,H,I,J,K,L,M,HOME,SME,MSI,FTTH,MSIVOICEONLY,COPPERDATAONLY,FTTHDATAONLY,FTTHNONWIFI,FTTHNONWIFIDATAONLY,ONU,VDSL,TELSET,BIZBOX,Barcode,GoodList,CreateTime,WorkStation,FinishedProductNum,RoNumber) ")
                         .Append(@"values ( ")
-                        .Append(@"@ID,@A,@B,@C,@D,@E,@F,@G,@H,@I,@J,@K,@L,@M,@HOME,@SME,@MSI,@FTTH,@MSIVOICEONLY,@COPPERDATAONLY,@FTTHDATAONLY,@FTTHNONWIFI,@FTTHNONWIFIDATAONLY,@ONU,@VDSL,@TELSET,@BIZBOX,@Barcode,@GoodList,@CreateTime,@WorkStation,@FinishedProductNum ")
+                        .Append(@"@ID,@A,@B,@C,@D,@E,@F,@G,@H,@I,@J,@K,@L,@M,@HOME,@SME,@MSI,@FTTH,@MSIVOICEONLY,@COPPERDATAONLY,@FTTHDATAONLY,@FTTHNONWIFI,@FTTHNONWIFIDATAONLY,@ONU,@VDSL,@TELSET,@BIZBOX,@Barcode,@GoodList,@CreateTime,@WorkStation,@FinishedProductNum,@RoNumber ")
                         .Append(@")");
                     new SQLiteHelper().ExecuteNonQueryBatch(noQueryStrbd.ToString(), paramList);
                 }

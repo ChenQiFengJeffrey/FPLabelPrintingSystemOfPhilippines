@@ -41,5 +41,6 @@ namespace FPLabelPrintingSystemOfPhilippines.ColumnNameConfig
         public string CreateTime = "CreateTime";
         public string WorkStation = "WorkStation";
         public string FinishedProductNum = "FinishedProductNum";
+        public string RoNumber = "RoNumber";
     }
 }

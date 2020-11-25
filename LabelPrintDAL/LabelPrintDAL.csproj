@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RoSetBLL.cs" />
     <Compile Include="GoodSetBLL.cs" />
     <Compile Include="LabelRecordBLL.cs" />
     <Compile Include="LogHelper.cs" />

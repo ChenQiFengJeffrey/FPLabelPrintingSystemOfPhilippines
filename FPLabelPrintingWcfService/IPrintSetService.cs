@@ -20,6 +20,9 @@ namespace FPLabelPrintingWcfService
         DataTable GetGoodSetByFPNum(string finishedProductNum);
 
         [OperationContract]
+        DataTable GetRoSetByFPNum(string finishedProductNum);
+
+        [OperationContract]
         void InsertLabelRecord(List<FinishedProductLabelDTO> dtoList);
     }
 }

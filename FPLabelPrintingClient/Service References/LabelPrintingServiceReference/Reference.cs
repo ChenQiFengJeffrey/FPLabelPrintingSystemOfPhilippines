@@ -27,6 +27,12 @@ namespace FPLabelPrintingClient.LabelPrintingServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrintSetService/GetGoodSetByFPNum", ReplyAction="http://tempuri.org/IPrintSetService/GetGoodSetByFPNumResponse")]
         System.Threading.Tasks.Task<System.Data.DataTable> GetGoodSetByFPNumAsync(string finishedProductNum);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrintSetService/GetRoSetByFPNum", ReplyAction="http://tempuri.org/IPrintSetService/GetRoSetByFPNumResponse")]
+        System.Data.DataTable GetRoSetByFPNum(string finishedProductNum);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrintSetService/GetRoSetByFPNum", ReplyAction="http://tempuri.org/IPrintSetService/GetRoSetByFPNumResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> GetRoSetByFPNumAsync(string finishedProductNum);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrintSetService/InsertLabelRecord", ReplyAction="http://tempuri.org/IPrintSetService/InsertLabelRecordResponse")]
         void InsertLabelRecord(FPLabelData.FinishedProductLabelDTO[] dtoList);
         
@@ -75,6 +81,14 @@ namespace FPLabelPrintingClient.LabelPrintingServiceReference {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> GetGoodSetByFPNumAsync(string finishedProductNum) {
             return base.Channel.GetGoodSetByFPNumAsync(finishedProductNum);
+        }
+        
+        public System.Data.DataTable GetRoSetByFPNum(string finishedProductNum) {
+            return base.Channel.GetRoSetByFPNum(finishedProductNum);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetRoSetByFPNumAsync(string finishedProductNum) {
+            return base.Channel.GetRoSetByFPNumAsync(finishedProductNum);
         }
         
         public void InsertLabelRecord(FPLabelData.FinishedProductLabelDTO[] dtoList) {

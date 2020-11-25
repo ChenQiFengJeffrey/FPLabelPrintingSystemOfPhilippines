@@ -41,5 +41,11 @@ namespace FPLabelPrintingWcfService
             bll.InsertLabelRecord(dtoList);
             return;
         }
+
+        public DataTable GetRoSetByFPNum(string finishedProductNum)
+        {
+            RoSetBLL rsbll = new RoSetBLL();
+            return rsbll.GetRoSetByFPNum(finishedProductNum);
+        }
     }
 }

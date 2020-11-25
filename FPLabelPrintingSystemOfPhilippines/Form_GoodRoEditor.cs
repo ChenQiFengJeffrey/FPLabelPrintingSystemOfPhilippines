@@ -106,7 +106,7 @@ namespace FPLabelPrintingSystemOfPhilippines
                 MessageBox.Show("RoNumber is null", "Warning");
                 return;
             }
-            #region 装载Good
+            #region 装载Ro
             RoSet goodro = new RoSet();
             int oid = 0;
             goodro.Oid = int.TryParse(textBox1.Text.Trim(), out oid) ? oid : 0;
@@ -114,11 +114,10 @@ namespace FPLabelPrintingSystemOfPhilippines
             goodro.FinishedProductNum = int.TryParse(comboBox1.SelectedValue.ToString(), out fpoid) ? fpoid : 0;
             goodro.RoNumber = textBox3.Text.Trim();
             #endregion
-            //InsertOrUpdateGoodSet(good);
             Task.Run(() => InsertOrUpdateGoodRoSet(goodro));
             return;
         }
-        delegate void InsertOrUpdateGoodSetCallBackDel();
+        delegate void InsertOrUpdateRoSetCallBackDel();
         /// <summary>
         /// 添加/更新成品Ro#配置
         /// </summary>
@@ -156,7 +155,7 @@ namespace FPLabelPrintingSystemOfPhilippines
                             .Append(@" WHERE Oid=@Oid");
                     }
                     new SQLiteHelper().ExecuteNonQueryBatch(noQueryStrbd.ToString(), paramList);
-                    InsertOrUpdateGoodSetCallBackDel del = InsertOrUpdateGoodRoSetCallBack;
+                    InsertOrUpdateRoSetCallBackDel del = InsertOrUpdateRoSetCallBack;
                     this.BeginInvoke(del);
                     return;
                 }
@@ -166,12 +165,12 @@ namespace FPLabelPrintingSystemOfPhilippines
                 }
             }
         }
-        private void InsertOrUpdateGoodRoSetCallBack()
+        private void InsertOrUpdateRoSetCallBack()
         {
             this.Close();
             //刷新列表记录
             Form1 preForm = Application.OpenForms["Form1"] as Form1;
-            Task.Run(() => preForm.QueryGoodSet());
+            Task.Run(() => preForm.QueryGoodRoSet());
             return;
         }
     }

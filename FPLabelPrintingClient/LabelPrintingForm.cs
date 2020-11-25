@@ -22,6 +22,7 @@ namespace FPLabelPrintingClient
     public partial class LabelPrintingForm : Form
     {
         private PrintSet _currentPrintSet = null;
+        private RoSet _currentRoSet = null;
         private List<KeyValuePair<string, string>> _snList = new List<KeyValuePair<string, string>>();
         private List<GoodSet> _currentGoodSetList = null;
         private string _workStation = ConfigurationManager.AppSettings["WorkStation"].Trim();
@@ -62,6 +63,7 @@ namespace FPLabelPrintingClient
         public void LabelPrintClear()
         {
             _currentPrintSet = null;
+            _currentRoSet = null;
             _currentGoodSetList = null;
             _snList.Clear();
             _idStr = "";
@@ -94,6 +96,11 @@ namespace FPLabelPrintingClient
             if (_currentGoodSetList == null)
             {
                 Speecher("Good Config is null");
+                return;
+            }
+            if (_currentRoSet == null)
+            {
+                Speecher("Ro# Config is null");
                 return;
             }
             #region 自动打印成品标签
@@ -155,11 +162,21 @@ namespace FPLabelPrintingClient
                         Speecher("Goods Config is null");
                         return;
                     }
+                    //4、获取Ro配置
+                    DataTable rsdt = client.GetRoSetByFPNum(text);
+                    if (rsdt == null || rsdt.Rows.Count == 0)
+                    {
+                        Speecher("Ro# Config is null");
+                        return;
+                    }
                     button4.BackColor = Color.Green;
                     List<PrintSet> printsetList = PrintSet.DataTableToList(psdt);
+                    List<RoSet> rosetList = RoSet.DataTableToList(rsdt);
                     List<GoodSet> goodsetList = GoodSet.DataTableToList(gsdt);
                     _currentPrintSet = null;
-                    _currentPrintSet = printsetList.First();
+                    _currentPrintSet = printsetList.OrderByDescending(p=>p.CreateTime).First();
+                    _currentRoSet = null;
+                    _currentRoSet = rosetList.OrderByDescending(r=>r.Oid).First();
                     _currentGoodSetList = null;
                     _currentGoodSetList = goodsetList;
                     GotoNextTextBox(FinishedProductNum);
@@ -287,6 +304,9 @@ namespace FPLabelPrintingClient
             #endregion
             #region Good
             result.GoodList = _currentGoodSetList;
+            #endregion
+            #region Ro
+            result.RoNumber = _currentRoSet.RoNumber;
             #endregion
             #region Barcode
             StringBuilder barcodeStrbd = new StringBuilder();

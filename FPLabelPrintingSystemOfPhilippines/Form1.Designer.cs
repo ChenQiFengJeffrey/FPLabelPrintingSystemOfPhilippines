@@ -34,27 +34,12 @@
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.button13 = new System.Windows.Forms.Button();
             this.BIZBOX = new System.Windows.Forms.TextBox();
@@ -70,6 +55,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.button16 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -77,7 +78,6 @@
             this.button14 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
@@ -86,13 +86,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.xtraTabPage3.SuspendLayout();
             this.xtraTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.xtraTabPage3.SuspendLayout();
             this.xtraTabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.xtraTabPage6.SuspendLayout();
@@ -153,6 +153,12 @@
             this.navBarItem2.Name = "navBarItem2";
             this.navBarItem2.Tag = 2;
             // 
+            // navBarItem6
+            // 
+            this.navBarItem6.Caption = "成品Ro号/GoodRo#";
+            this.navBarItem6.Name = "navBarItem6";
+            this.navBarItem6.Tag = "3";
+            // 
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "打印/Print";
@@ -200,193 +206,6 @@
             this.xtraTabPage4,
             this.xtraTabPage6});
             this.xtraTabControl1.CloseButtonClick += new System.EventHandler(this.xtraTabControl1_CloseButtonClick);
-            // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.Controls.Add(this.button17);
-            this.xtraTabPage1.Controls.Add(this.button3);
-            this.xtraTabPage1.Controls.Add(this.button2);
-            this.xtraTabPage1.Controls.Add(this.button1);
-            this.xtraTabPage1.Controls.Add(this.dataGridView1);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.PageVisible = false;
-            this.xtraTabPage1.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-            this.xtraTabPage1.Size = new System.Drawing.Size(704, 368);
-            this.xtraTabPage1.Text = "FinishedProductSetting";
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(232, 10);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(128, 23);
-            this.button17.TabIndex = 4;
-            this.button17.Text = "UpdateMaterialData";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(611, 10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(506, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Add/Update";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(379, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Query/Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 39);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(698, 326);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // xtraTabPage5
-            // 
-            this.xtraTabPage5.Controls.Add(this.button6);
-            this.xtraTabPage5.Controls.Add(this.button5);
-            this.xtraTabPage5.Controls.Add(this.button4);
-            this.xtraTabPage5.Controls.Add(this.dataGridView4);
-            this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.PageVisible = false;
-            this.xtraTabPage5.Size = new System.Drawing.Size(704, 368);
-            this.xtraTabPage5.Text = "包装配置";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(624, 11);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "删除";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(543, 11);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "添加/更新";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(462, 11);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "查询/刷新";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 40);
-            this.dataGridView4.MultiSelect = false;
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.RowTemplate.Height = 23;
-            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(698, 324);
-            this.dataGridView4.TabIndex = 0;
-            // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Controls.Add(this.button9);
-            this.xtraTabPage2.Controls.Add(this.button8);
-            this.xtraTabPage2.Controls.Add(this.button7);
-            this.xtraTabPage2.Controls.Add(this.dataGridView2);
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.PageVisible = false;
-            this.xtraTabPage2.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-            this.xtraTabPage2.Size = new System.Drawing.Size(704, 368);
-            this.xtraTabPage2.Text = "PrintSetting";
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(614, 8);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "Delete";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(499, 8);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(95, 23);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "Add/Update";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(378, 8);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(103, 23);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "Query/Refresh";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 37);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(698, 328);
-            this.dataGridView2.TabIndex = 0;
             // 
             // xtraTabPage3
             // 
@@ -540,6 +359,193 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "FinishedProductNum";
             // 
+            // xtraTabPage5
+            // 
+            this.xtraTabPage5.Controls.Add(this.button6);
+            this.xtraTabPage5.Controls.Add(this.button5);
+            this.xtraTabPage5.Controls.Add(this.button4);
+            this.xtraTabPage5.Controls.Add(this.dataGridView4);
+            this.xtraTabPage5.Name = "xtraTabPage5";
+            this.xtraTabPage5.PageVisible = false;
+            this.xtraTabPage5.Size = new System.Drawing.Size(704, 368);
+            this.xtraTabPage5.Text = "包装配置";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(624, 11);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "删除";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(543, 11);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "添加/更新";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(462, 11);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "查询/刷新";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(3, 40);
+            this.dataGridView4.MultiSelect = false;
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowTemplate.Height = 23;
+            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView4.Size = new System.Drawing.Size(698, 324);
+            this.dataGridView4.TabIndex = 0;
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.button17);
+            this.xtraTabPage1.Controls.Add(this.button3);
+            this.xtraTabPage1.Controls.Add(this.button2);
+            this.xtraTabPage1.Controls.Add(this.button1);
+            this.xtraTabPage1.Controls.Add(this.dataGridView1);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.PageVisible = false;
+            this.xtraTabPage1.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
+            this.xtraTabPage1.Size = new System.Drawing.Size(704, 368);
+            this.xtraTabPage1.Text = "FinishedProductSetting";
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(232, 10);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(128, 23);
+            this.button17.TabIndex = 4;
+            this.button17.Text = "UpdateMaterialData";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(611, 10);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Delete";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(506, 10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(86, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Add/Update";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(379, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Query/Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 39);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(698, 326);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Controls.Add(this.button9);
+            this.xtraTabPage2.Controls.Add(this.button8);
+            this.xtraTabPage2.Controls.Add(this.button7);
+            this.xtraTabPage2.Controls.Add(this.dataGridView2);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.PageVisible = false;
+            this.xtraTabPage2.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
+            this.xtraTabPage2.Size = new System.Drawing.Size(704, 368);
+            this.xtraTabPage2.Text = "PrintSetting";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(614, 8);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 3;
+            this.button9.Text = "Delete";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(499, 8);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(95, 23);
+            this.button8.TabIndex = 2;
+            this.button8.Text = "Add/Update";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(378, 8);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(103, 23);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "Query/Refresh";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 37);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(698, 328);
+            this.dataGridView2.TabIndex = 0;
+            // 
             // xtraTabPage4
             // 
             this.xtraTabPage4.Controls.Add(this.button16);
@@ -607,6 +613,7 @@
             this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(3, 62);
             this.dataGridView3.Name = "dataGridView3";
@@ -616,12 +623,6 @@
             this.dataGridView3.Size = new System.Drawing.Size(698, 302);
             this.dataGridView3.TabIndex = 0;
             // 
-            // navBarItem6
-            // 
-            this.navBarItem6.Caption = "成品Ro号/GoodRo#";
-            this.navBarItem6.Name = "navBarItem6";
-            this.navBarItem6.Tag = "3";
-            // 
             // xtraTabPage6
             // 
             this.xtraTabPage6.Controls.Add(this.button18);
@@ -629,6 +630,8 @@
             this.xtraTabPage6.Controls.Add(this.button20);
             this.xtraTabPage6.Controls.Add(this.dataGridView5);
             this.xtraTabPage6.Name = "xtraTabPage6";
+            this.xtraTabPage6.PageVisible = false;
+            this.xtraTabPage6.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
             this.xtraTabPage6.Size = new System.Drawing.Size(704, 368);
             this.xtraTabPage6.Text = "GoodRo#";
             // 
@@ -640,6 +643,7 @@
             this.button18.TabIndex = 7;
             this.button18.Text = "Delete";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button19
             // 
@@ -649,6 +653,7 @@
             this.button19.TabIndex = 6;
             this.button19.Text = "Add/Update";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button20
             // 
@@ -658,6 +663,7 @@
             this.button20.TabIndex = 5;
             this.button20.Text = "Query/Refresh";
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // dataGridView5
             // 
@@ -666,7 +672,7 @@
             this.dataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Location = new System.Drawing.Point(3, 36);
             this.dataGridView5.MultiSelect = false;
@@ -693,14 +699,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.xtraTabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.xtraTabPage3.ResumeLayout(false);
             this.xtraTabPage3.PerformLayout();
+            this.xtraTabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.xtraTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.xtraTabPage4.ResumeLayout(false);
             this.xtraTabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
