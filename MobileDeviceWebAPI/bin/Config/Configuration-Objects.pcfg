@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 被2011 rel. 2 sp1 (Wendell Dai) 使用XMLSpy vJHJ编辑的 (http://www.altova.com) by -->
+<objects xmlns="http://www.springframework.net"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.net
+		http://www.springframework.net/xsd/spring-objects.xsd">           
+	  
+	  <object id="ConfigProvider" type="Pivots.BLL.ConfigProvider,Pivots.BLL"></object>
+	  
+
+</objects>

@@ -1,0 +1,36 @@
+﻿{
+	"fields":[
+		{"name": "id","type": "string"},
+		{"name": "asnno","type": "string"},
+		{"name": "iscompleted","type": "bool"},
+		{"name": "status","type": "string"},
+		{"name": "uploaddate","type": "date"},
+		{"name": "uploader","type": "auto"},
+		{"name": "warehouse","type": "auto"}
+    ],
+    "columns": [
+		{
+			'dataIndex': 'asnno',
+			'header':'',
+			'width': 150
+		},
+		{
+			'dataIndex': 'status',
+			'header':'',
+			'width': 150
+		},
+		{
+			'dataIndex': 'iscompleted',
+			'header':'',
+			'width': 150,
+			'renderer': function(val){
+				if (val) {
+					return '是';
+				} else {
+					return '否';
+				}
+				return val;
+			}
+		}      
+    ]
+}

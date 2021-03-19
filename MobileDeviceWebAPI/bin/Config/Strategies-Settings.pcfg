@@ -1,0 +1,29 @@
+<!-- 被2011 rel. 2 sp1 (Wendell Dai) 使用XMLSpy vJHJ编辑的 (http://www.altova.com) by -->
+<manifest>
+	<strategies>
+		<strategy remark="打印下架通知书" id="091979EE3D1442949454874D915920ED" action="report" scope="Pivots.Data.Entity.OutBoundRec">
+			<tagerts>
+				<tagert>2B2DBDAE822545F89BC94B4FE12AC321</tagert>
+			</tagerts>
+			<handlers>
+				<handler type="set">
+					<field name="PrintShelfTime">
+						<value>$$CurrentDateTime</value>
+					</field>
+				</handler>
+			</handlers>
+		</strategy>
+		<strategy remark="打印补货通知书" id="0B4F9F9AEA9646EA82F8525BC8584B13" action="report" scope="Pivots.Data.Entity.OutBoundRec">
+			<tagerts>
+				<tagert>EAEA985BD20E4600974B20B3CD6FC33D</tagert>
+			</tagerts>
+			<handlers>
+				<handler type="set">
+					<field name="PrintShelfTime">
+						<value>$$CurrentDateTime</value>
+					</field>
+				</handler>
+			</handlers>
+		</strategy>		
+	</strategies>
+</manifest>

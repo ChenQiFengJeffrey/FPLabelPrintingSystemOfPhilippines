@@ -1,0 +1,179 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "material",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name": "amount",
+            "type": "double"
+        },
+        {
+            "name":"openamount",
+            "type":"double"
+        },          
+        {
+            "name": "storageposition",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name":"package",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"lot",
+            "type":"string"
+        },      
+        {
+            "name":"lastchecktime",
+            "type":"date"
+        },
+        {
+            "name":"custstorageposition",
+            "type":"string"
+        },        
+        {
+            "name":"storagestrategy",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"sunumber",
+            "type":"string"
+        },
+        {
+            "name":"snp",
+            "type":"int"
+        },        
+        {
+            "name":"tracingid",
+            "type":"string"
+        },
+        {
+            "name":"palletlabel",
+            "type":"string"
+        },
+        {
+            "name": "freezeamount",
+            "type": "double"
+        },
+        {
+            "name": "isprior",
+            "type": "bool"
+        },
+        {
+            "name": "mrfid",
+            "type": "string"
+        }              
+    ],
+    "columns": [
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'storagestrategy',
+            text: 'Project',
+            sortable:false
+        },      
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'material',
+            text: 'Materiel No.',
+            displayField:'name',
+            sortable:false,
+            "renderer":function(val, metaData, record){
+                if(record.get("isprior") === true)                
+                    return "<font color='red'>" + val["name"] + "</font>";
+                else
+                    return val["name"];
+            } 
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'material',
+            text: 'Description ',
+            displayField:'code',
+            sortable:false
+        },  
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'storageposition',
+            sortIndex: 'StoragePosition.Name',  
+            text: 'Location',
+            sortable:false
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'package',
+            text: 'UOM',
+            displayField:'name',
+            sortable:false
+        },        
+        {
+            "header": "Quantity",
+            "dataIndex": "amount",
+            "hidden": false,
+            "format": "0",
+            "width": 80,
+            "sortable":false,
+            "renderer":function(val, metaData, record){                
+                return val - record.get("freezeamount");
+            }  
+        },
+        {
+            "header": "FrozenQuantity",
+            "dataIndex": "freezeamount",
+            "hidden": false,
+            "format": "0",
+            "width": 80,
+            "sortable":false
+        },        
+        {
+            "header": "InitialQuantity",
+            "dataIndex": "openamount",
+            "hidden": false,
+            "format": "0",
+            "width": 80,
+            "sortable":false
+        },        
+        {
+            "header": "Batch No.",
+            "dataIndex": "lot",
+            "hidden": false,
+            "width": 130,
+            "sortable":false
+        },
+        {
+            "header": "SNP",
+            "dataIndex": "snp",
+            "hidden": false,
+            "width": 150,
+            "sortable":false
+        },         
+        {
+            "header": "Supplier",
+            "dataIndex": "sunumber",
+            "hidden": false,
+            "width": 150,
+            "sortable":false
+        },   
+        {
+            "header": "Receipt No.",
+            "dataIndex": "custstorageposition",
+            "hidden": false,
+            "width": 130,
+            "sortable":false,
+            "editor": {
+                "allowBlank": true
+            }
+        },   
+        {
+            "header": "CCID",
+            "dataIndex": "mrfid",
+            "hidden": false,
+            "width": 130,
+            "sortable":false
+        }   
+    ]
+}

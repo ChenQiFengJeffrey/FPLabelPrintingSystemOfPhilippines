@@ -1,0 +1,53 @@
+{
+	"fields":[
+		{"name": "id","type": "int"},
+		{"name": "storagearea","type": "number"},
+		{"name": "material","type": "auto"},
+		{"name": "ngarea","type": "number"},
+		{"name": "quarantinearea","type": "number"},
+		{"name": "outboundarea","type": "number"},
+		{"name": "warehouse","type": "auto"}
+    ],
+    "columns": [
+		{
+			'dataIndex': 'material',
+			'xtype': 'combocolumn',
+			'text':'Code No.',
+			'width': 220
+		},
+        {
+			'dataIndex': 'warehouse',
+			'xtype': 'combocolumn',
+			'text':'W/H',
+			'width': 220
+		},
+		{
+			'dataIndex': 'quarantinearea',
+			'xtype': 'numbercolumn',
+			'text':'QA Area',
+			'format': '0.00',
+			'width': 220
+		},        
+        {
+			'dataIndex': 'storagearea',
+			'xtype': 'numbercolumn',
+			'text':'Storage Area',
+			'format': '0.00',
+			'width': 220
+		},
+		{
+			'dataIndex': 'outboundarea',
+			'xtype': 'numbercolumn',
+			'text':'Outbound Area',
+			'format': '0.00',
+			'width': 220
+		}, 
+        {
+			'dataIndex': 'ngarea',
+			'xtype': 'numbercolumn',
+			'text':'NG Area',
+			'format': '0.00',
+			'width': 220
+		}
+    ]
+}

@@ -1,4 +1,5 @@
 ﻿using FPLabelData;
+using FPLabelData.DTO;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace LabelPrintDAL
             try
             {
                 if (dtoList == null || dtoList.Count == 0) return;
+                StringBuilder noQueryStrbd = new StringBuilder();
+                List<SQLiteParameter[]> paramList = new List<SQLiteParameter[]>();
                 foreach (var dto in dtoList)
                 {
-                    StringBuilder noQueryStrbd = new StringBuilder();
-                    List<SQLiteParameter[]> paramList = new List<SQLiteParameter[]>();
                     SQLiteParameter[] parameter = {
                             SQLiteHelper.MakeSQLiteParameter("@Oid", DbType.Int32,dto.Oid),
                             SQLiteHelper.MakeSQLiteParameter("@ID", DbType.String,dto.ID),
@@ -59,12 +60,12 @@ namespace LabelPrintDAL
                             };
                     paramList.Add(parameter);
                     //添加新数据
-                    noQueryStrbd.Append(@"Insert into LabelRecord (ID,A,B,C,D,E,F,G,H,I,J,K,L,M,HOME,SME,MSI,FTTH,MSIVOICEONLY,COPPERDATAONLY,FTTHDATAONLY,FTTHNONWIFI,FTTHNONWIFIDATAONLY,ONU,VDSL,TELSET,BIZBOX,Barcode,GoodList,CreateTime,WorkStation,FinishedProductNum,RoNumber) ")
-                        .Append(@"values ( ")
-                        .Append(@"@ID,@A,@B,@C,@D,@E,@F,@G,@H,@I,@J,@K,@L,@M,@HOME,@SME,@MSI,@FTTH,@MSIVOICEONLY,@COPPERDATAONLY,@FTTHDATAONLY,@FTTHNONWIFI,@FTTHNONWIFIDATAONLY,@ONU,@VDSL,@TELSET,@BIZBOX,@Barcode,@GoodList,@CreateTime,@WorkStation,@FinishedProductNum,@RoNumber ")
-                        .Append(@")");
-                    new SQLiteHelper().ExecuteNonQueryBatch(noQueryStrbd.ToString(), paramList);
                 }
+                noQueryStrbd.Append(@"Insert into LabelRecord (ID,A,B,C,D,E,F,G,H,I,J,K,L,M,HOME,SME,MSI,FTTH,MSIVOICEONLY,COPPERDATAONLY,FTTHDATAONLY,FTTHNONWIFI,FTTHNONWIFIDATAONLY,ONU,VDSL,TELSET,BIZBOX,Barcode,GoodList,CreateTime,WorkStation,FinishedProductNum,RoNumber) ")
+                    .Append(@"values ( ")
+                    .Append(@"@ID,@A,@B,@C,@D,@E,@F,@G,@H,@I,@J,@K,@L,@M,@HOME,@SME,@MSI,@FTTH,@MSIVOICEONLY,@COPPERDATAONLY,@FTTHDATAONLY,@FTTHNONWIFI,@FTTHNONWIFIDATAONLY,@ONU,@VDSL,@TELSET,@BIZBOX,@Barcode,@GoodList,@CreateTime,@WorkStation,@FinishedProductNum,@RoNumber ")
+                    .Append(@")");
+                new SQLiteHelper().ExecuteNonQueryBatch(noQueryStrbd.ToString(), paramList);
                 return;
             }
             catch (Exception ex)

@@ -1,0 +1,32 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "code",
+            "type": "string"
+        },        
+        {
+            "name": "order",
+            "type": "int"
+        },          
+        {
+            "name": "isvisiabled",
+            "type": "bool"
+        }
+    ],
+    "columns": [
+        {
+            "header": "Name",
+            "dataIndex": "name",
+            "hidden": false,
+            "width": 130
+        }
+    ]
+}

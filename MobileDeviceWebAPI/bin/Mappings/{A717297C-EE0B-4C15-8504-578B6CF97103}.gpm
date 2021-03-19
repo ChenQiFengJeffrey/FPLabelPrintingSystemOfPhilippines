@@ -1,0 +1,226 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "material",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name": "outdate",
+            "type": "date"
+        },
+        {
+            "name": "storageposition",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name":"package",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"lot",
+            "type":"string"
+        },
+        {
+            "name":"amount",
+            "type":"double"
+        },
+        {
+            "name":"custstorageposition",
+            "type":"string"
+        },
+        {
+            "name":"movingsign",
+            "type":"bool"
+        },
+        {
+            "name":"storagestrategy",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"targetsp",
+            "type":"Pivots.model.M_Dict"
+        },        
+        {
+            "name":"operator",
+            "type":"Pivots.model.M_Dict"
+        },        
+        {
+            "name":"user",
+            "mapping":"operator.nickname",
+            "type":"string"
+        },
+        {
+            "name":"warehouse",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"movingsign",
+            "type":"bool"
+        },
+        {
+            "name":"customer",
+            "mapping":"material.customer",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"sunumber",
+            "type":"string"
+        },
+        {
+            "name":"vehicledispatchinginfo",
+            "mapping":"vehicledispatchinginfo",
+            "type":"auto"
+        },
+        {
+            "name":"snp",
+            "type":"int"
+        },        
+        {
+            "name":"tracingid",
+            "type":"string"
+        },
+        {
+            "name":"palletlabel",
+            "type":"string"
+        },
+        {
+            "name":"remark",
+            "type":"string"
+        },
+        {
+            "name":"remark2",
+            "type":"string"
+        },
+        {
+            "name":"remark3",
+            "type":"string"
+        },
+        {
+            "name":"outboundrecextendinfo",
+            "type":"object"
+        }   
+    ],
+    "columns": [
+        Ext.create('Ext.grid.RowNumberer',{text:'',width:40   }),
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'storagestrategy',
+            text: 'Project'
+        }, 
+        {
+            "header": "Remark",
+            "dataIndex": "remark",
+            "hidden": false,
+            "width": 130
+        },        
+        {
+            "header": " Required Delivery Time ",
+            "dataIndex": "outboundrecextendinfo",
+            "hidden": false,
+            "width": 150,
+            "sortable":true,
+            "renderer":function(val, metaData, record){   
+                return val.presendtime;
+            }           
+        },
+        {
+            "header": "Whether priority ",
+            "dataIndex": "outboundrecextendinfo",
+            "hidden": false,
+            "width": 150,
+            "sortable":true,
+            "renderer":function(val, metaData, record){ 
+                return val.isprior === true ? 'Yes' : 'No';
+            }           
+        },  
+        {
+            "header": "Whether Urgent ",
+            "dataIndex": "outboundrecextendinfo",
+            "hidden": false,
+            "width": 150,
+            "sortable":true,
+            "renderer":function(val, metaData, record){ 
+                return val.isurgent === true ? 'Yes' : 'No';
+            }           
+        },
+        {
+            xtype: 'datecolumn',                                           
+            dataIndex: 'outdate',
+            text: 'Operation Time ',
+            format:'Y-m-d H:i:s',
+            width:130
+        },       
+        {
+            xtype: 'combocolumn', 
+            dataIndex: 'customer',
+            text: 'Customer '
+        },           
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'material',
+            text: 'Materiel No.',
+            displayField:'name'
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'material',
+            text: 'Description ',
+            displayField:'code'
+        },  
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'storageposition',
+            sortIndex: 'StoragePosition.Name',        
+            text: 'Original Location'
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'package',
+            text: 'UOM'
+        },
+        {
+            "header": "Quantity",
+            "dataIndex": "amount",
+            "hidden": false,
+            "format": "0",
+            "width": 80
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'targetsp',      
+            text: 'Target Location'
+        },        
+        {
+            "header": "Batch No.",
+            "dataIndex": "lot",
+            "hidden": false,
+            "width": 130
+        }, 
+        {
+            "header": "SNP",
+            "dataIndex": "snp",
+            "hidden": false,
+            "width": 150
+        },  
+        {
+            "header": "Supplier",
+            "dataIndex": "sunumber",
+            "hidden": false,
+            "width": 150
+        },           
+        {
+            "header": "Receipt No.",
+            "dataIndex": "custstorageposition",
+            "hidden": false,
+            "width": 130
+        }, 
+        {
+            "header": "Operator",                                         
+            "dataIndex": 'user'            
+        }     
+    ]
+}

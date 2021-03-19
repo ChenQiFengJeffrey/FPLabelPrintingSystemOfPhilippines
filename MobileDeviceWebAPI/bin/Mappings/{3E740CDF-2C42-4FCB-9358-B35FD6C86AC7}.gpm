@@ -1,0 +1,52 @@
+{
+    "fields": [
+        {"name": "id","type": "int"},
+        {"name": "amount","type": "number"},
+        {"name": "lot","type": "string"},
+        {"name": "material","type": "string"},
+        {"name": "area","type": "string"},
+        {"name": "warehouse","type": "string"},
+        {"name": "customer","type": "string"} ,
+        {"name": "ibaom","type": "number"},
+        {"name": "obaom","type": "number"} 
+    ],
+    "columns": [
+        {
+            'dataIndex': 'customer',
+            'header':'Customer',
+            'width': 150
+        },
+        {
+            'dataIndex': 'material',
+            'header':'Materiel No.',
+            'width': 150
+        },
+        {
+            'dataIndex': 'amount',
+            'xtype': 'numbercolumn',
+            'text':'包装库存量',
+            'format': '0.00',
+            'width': 106
+        },          
+        {
+            'dataIndex': 'area',
+            'header':'Area',
+            'width': 150
+        },          
+        {
+            'dataIndex': 'warehouse',
+            'header':'Warehouse',
+            'width': 150
+        },
+        {
+            'dataIndex': 'ibaom',
+            'header':'Intbound in This Month',
+            'width': 180
+        },
+        {
+            'dataIndex': 'obaom',
+            'header':'Outbound in This Month',
+            'width': 180
+        }
+    ]
+}

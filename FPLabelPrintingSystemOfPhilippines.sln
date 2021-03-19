@@ -17,6 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLabelPrintingWcfService",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLabelPrintingClient", "FPLabelPrintingClient\FPLabelPrintingClient.csproj", "{6A6E892A-BF0B-4598-A9A4-23E71C98EFCD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileWcfService", "MobileWcfService\MobileWcfService.csproj", "{B5475A4D-800A-4E96-AF76-0EE0B07E6917}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileDeviceWebAPI", "MobileDeviceWebAPI\MobileDeviceWebAPI.csproj", "{1A8A63DE-E691-412D-B383-0F86AF52DB9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pivots.Network", "Pivots.Network\Pivots.Network.csproj", "{BED71C39-31E4-463B-9CA7-3E8FB30D523A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +57,18 @@ Global
 		{6A6E892A-BF0B-4598-A9A4-23E71C98EFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A6E892A-BF0B-4598-A9A4-23E71C98EFCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A6E892A-BF0B-4598-A9A4-23E71C98EFCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5475A4D-800A-4E96-AF76-0EE0B07E6917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5475A4D-800A-4E96-AF76-0EE0B07E6917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5475A4D-800A-4E96-AF76-0EE0B07E6917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5475A4D-800A-4E96-AF76-0EE0B07E6917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A8A63DE-E691-412D-B383-0F86AF52DB9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A8A63DE-E691-412D-B383-0F86AF52DB9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A8A63DE-E691-412D-B383-0F86AF52DB9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A8A63DE-E691-412D-B383-0F86AF52DB9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED71C39-31E4-463B-9CA7-3E8FB30D523A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED71C39-31E4-463B-9CA7-3E8FB30D523A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED71C39-31E4-463B-9CA7-3E8FB30D523A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED71C39-31E4-463B-9CA7-3E8FB30D523A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

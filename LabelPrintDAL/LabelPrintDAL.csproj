@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemCodeSNBLL.cs" />
     <Compile Include="RoSetBLL.cs" />
     <Compile Include="GoodSetBLL.cs" />
     <Compile Include="LabelRecordBLL.cs" />
@@ -78,6 +79,10 @@
     <ProjectReference Include="..\FPLabelData\FPLabelData.csproj">
       <Project>{D4C9124F-5537-4CBF-9D47-20C0571EA57F}</Project>
       <Name>FPLabelData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pivots.Network\Pivots.Network.csproj">
+      <Project>{bed71c39-31e4-463b-9ca7-3e8fb30d523a}</Project>
+      <Name>Pivots.Network</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

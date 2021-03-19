@@ -39,6 +39,7 @@
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.button13 = new System.Windows.Forms.Button();
@@ -83,6 +84,14 @@
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.xtraTabPage7 = new DevExpress.XtraTab.XtraTabPage();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -97,6 +106,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.xtraTabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.xtraTabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.SuspendLayout();
             // 
             // navBarControl1
@@ -115,7 +126,8 @@
             this.navBarItem3,
             this.navBarItem4,
             this.navBarItem5,
-            this.navBarItem6});
+            this.navBarItem6,
+            this.navBarItem7});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 164;
@@ -178,13 +190,19 @@
             this.navBarGroup3.Caption = "查询/Query";
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navBarItem4
             // 
             this.navBarItem4.Caption = "标签记录/LabelRecord";
             this.navBarItem4.Name = "navBarItem4";
+            // 
+            // navBarItem7
+            // 
+            this.navBarItem7.Caption = "原料SN记录/SNRecord";
+            this.navBarItem7.Name = "navBarItem7";
             // 
             // xtraTabControl1
             // 
@@ -204,7 +222,8 @@
             this.xtraTabPage2,
             this.xtraTabPage3,
             this.xtraTabPage4,
-            this.xtraTabPage6});
+            this.xtraTabPage6,
+            this.xtraTabPage7});
             this.xtraTabControl1.CloseButtonClick += new System.EventHandler(this.xtraTabControl1_CloseButtonClick);
             // 
             // xtraTabPage3
@@ -683,6 +702,90 @@
             this.dataGridView5.Size = new System.Drawing.Size(698, 326);
             this.dataGridView5.TabIndex = 4;
             // 
+            // xtraTabPage7
+            // 
+            this.xtraTabPage7.Controls.Add(this.dataGridView6);
+            this.xtraTabPage7.Controls.Add(this.button22);
+            this.xtraTabPage7.Controls.Add(this.button21);
+            this.xtraTabPage7.Controls.Add(this.textBox3);
+            this.xtraTabPage7.Controls.Add(this.label7);
+            this.xtraTabPage7.Controls.Add(this.textBox2);
+            this.xtraTabPage7.Controls.Add(this.label6);
+            this.xtraTabPage7.Name = "xtraTabPage7";
+            this.xtraTabPage7.PageVisible = false;
+            this.xtraTabPage7.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
+            this.xtraTabPage7.Size = new System.Drawing.Size(704, 368);
+            this.xtraTabPage7.Text = "RMSN";
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.AllowUserToAddRows = false;
+            this.dataGridView6.AllowUserToDeleteRows = false;
+            this.dataGridView6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(3, 67);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.ReadOnly = true;
+            this.dataGridView6.RowTemplate.Height = 23;
+            this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView6.Size = new System.Drawing.Size(698, 298);
+            this.dataGridView6.TabIndex = 15;
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(602, 38);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(75, 23);
+            this.button22.TabIndex = 14;
+            this.button22.Text = "Export";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(602, 9);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(75, 23);
+            this.button21.TabIndex = 13;
+            this.button21.Text = "Search";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(133, 38);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(455, 22);
+            this.textBox3.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(20, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 14);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "RawMaterial Code:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(62, 11);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(526, 22);
+            this.textBox2.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 14);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "RO#:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -712,6 +815,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.xtraTabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.xtraTabPage7.ResumeLayout(false);
+            this.xtraTabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -771,6 +877,15 @@
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.DataGridView dataGridView5;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage7;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem7;
     }
 }
 

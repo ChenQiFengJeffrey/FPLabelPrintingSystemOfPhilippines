@@ -1,0 +1,214 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "int"
+        },
+        {
+            "name": "scheduleno",
+            "type": "string"
+        },
+        {
+            "name": "selfcontainerno",
+            "type": "string"
+        },        
+        {
+            "name": "custcontainerno",
+            "type": "string"
+        },          
+        {
+            "name": "receiverid",
+            "type": "string"
+        },          
+        {
+            "name": "submittedid",
+            "type": "string"
+        },          
+        {
+            "name": "rblr",
+            "type": "string"
+        },          
+        {
+            "name": "mlr",
+            "type": "string"
+        },          
+        {
+            "name": "capacityofpackcase",
+            "type": "int"
+        },          
+        {
+            "name": "amountofpackcase",
+            "type": "int"
+        },          
+        {
+            "name": "iscomplete",
+            "type": "bool"
+        },          
+        {
+            "name": "iscomplete",
+            "type": "bool"
+        },          
+        {
+            "name": "iscomplete",
+            "type": "bool"
+        },          
+        {
+            "name": "etd",
+            "type": "date"
+        },
+        {
+            "name": "eta",
+            "type": "date"
+        },
+        {
+            "name": "vehicledispatchinginfo",
+            "type": "object"
+        },          
+        {
+            "name": "pickingfacetime",
+            "type": "date"
+        },
+        {
+            "name": "innerex",
+            "type": "bool"
+        },          
+        {
+            "name": "adjoinex",
+            "type": "bool"
+        }
+    ],
+    "columns": [
+        {
+            "header": "序列异常",
+            "hidden": false,
+            "width": 130,
+            "renderer" : function(val, metaData, record){
+                var result = [];
+                if(record.get("innerex") == true)
+                    result.push("内部序列异常");
+                if(record.get("adjoinex") == true)
+                    result.push("毗邻序列异常"); 
+                return result.join(",")             
+            }
+        },    
+        {
+            "header": " Delivery Ticket No.",
+            "dataIndex": "scheduleno",
+            "hidden": false,
+            "width": 130
+        },
+        {
+            "header": "container No.",
+            "dataIndex": "selfcontainerno",
+            "hidden": false,
+            "width": 130
+        },
+        {
+            "header": "Receiving EquipmentID",
+            "dataIndex": "receiverid",
+            "hidden": false,
+            "width": 130
+        },
+        {
+            "header": "Submit EquipmentID",
+            "dataIndex": "submittedid",
+            "hidden": false,
+            "width": 130
+        },
+        {
+            "header": "箱标签识别规则",
+            "dataIndex": "rblr",
+            "hidden": false,
+            "width": 130
+        },
+        {
+            "header": "物料标签识别规则",
+            "dataIndex": "mlr",
+            "hidden": false,
+            "width": 130
+        },
+        {
+            "header": "收容数",
+            "dataIndex": "capacityofpackcase",
+            "hidden": false,
+            "width": 130
+        },
+        {
+            "header": "实装数",
+            "dataIndex": "amountofpackcase",
+            "hidden": false,
+            "width": 130
+        },
+        {
+            "header": "Status",
+            "hidden": false,
+            "width": 130,
+            "renderer" : function(val, metaData, record){
+                var result = "Not Start";               
+                result = Ext.isEmpty(record.get("receiverid")) ? result:"装箱任务，设备已接收";
+                result = Ext.isEmpty(record.get("selfcontainerno")) ? result:"已装箱";
+                result = !(!Ext.isEmpty(record.get("selfcontainerno")) && Ext.isEmpty(record.get("submittedid")) && !Ext.isEmpty(record.get("receiverid"))) ? result:"Outbound 任务，设备已接收";
+                result = record.get("iscomplete") == false ? result:"已扫描，Outbound ";
+
+                if(Ext.isEmpty(record.get("selfcontainerno")) && (Date.now() > record.get("pickingfacetime")))
+                    result += "(已过最晚装箱时间)"
+                else if((!Ext.isEmpty(record.get("selfcontainerno")) && (Ext.isEmpty(record.get("vehicledispatchinginfo")) || record.get("iscomplete") == false)) && (Date.now() > record.get("etd"))){
+                    result += "(已过最晚发车时间)"
+                }
+
+                return result;
+            }
+        },
+        {
+            "xtype":"datecolumn",
+            "dataIndex":"pickingfacetime",
+            "text":"最晚装箱时间",
+            "width": 130,
+            "format"   : 'Y-m-d H:i'
+        },        
+        {
+            "xtype":"datecolumn",
+            "dataIndex":"etd",
+            "text":"最晚发车时间",
+            "width": 130,
+            "format"   : 'Y-m-d H:i'
+        },
+        {
+            "xtype":"datecolumn",
+            "dataIndex":"eta",
+            "text":"最晚到达时间",
+            "width": 130,
+            "format"   : 'Y-m-d H:i'
+        },        
+        {
+            "header": "派车信息",
+            "hidden": false,
+            "width": 130,
+            "renderer":function(val, metaData, record){
+                  var result = "未派车";  
+                   result = Ext.isEmpty(record.get("vehicledispatchinginfo")) ? result:record.get("vehicledispatchinginfo").vehicleinfo.name;                       
+                   return result;
+            }
+        },
+        {
+            "header": "Delivery No.",
+            "hidden": false,
+            "width": 130,
+            "renderer":function(val, metaData, record){
+                  var result = "-";  
+                   result = Ext.isEmpty(record.get("vehicledispatchinginfo")) ? result:record.get("vehicledispatchinginfo").dispatchingno; 
+                   return result;
+            }
+        },
+        {
+            "header": "发车时间",
+            "hidden": false,
+            "width": 130,
+            "renderer":function(val, metaData, record){
+                  var result = "-";  
+                   result = Ext.isEmpty(record.get("vehicledispatchinginfo")) ? result:record.get("vehicledispatchinginfo").time; 
+                   return result;
+            }
+        }         
+    ]
+}

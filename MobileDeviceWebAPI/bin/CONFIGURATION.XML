@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 被2011 rel. 2 sp1 (Wendell) 使用XMLSpy vJHJWH编辑的 (http://www.altova.com) by -->
+<manifest>
+  <appSettings>
+    <add key="DBCONNECTION" value="MSSQL"/>
+
+  </appSettings>
+  <connectionStrings>
+    <!--<add name="MSSQL" dbtype="MSSQL">
+      <datasource>.</datasource>
+      <userid>sa</userid>
+      <password>123456</password>
+      <database>WMSOA_ZQZCS_Out</database>
+      <maxconnections>2</maxconnections>
+    </add>-->
+    <!--<add name="MSSQL" dbtype="MSSQL">
+      <datasource>.</datasource>
+      <userid>sa</userid>
+      <password>123456</password>
+      <database>WMSOA_Philippines</database>
+      <maxconnections>2</maxconnections>
+    </add>-->
+    <!--<add name="MSSQL" dbtype="MSSQL">
+      <datasource>192.168.88.15</datasource>
+      <userid>sa</userid>
+      <password>*4b7d7fe</password>
+      <database>WMSOA_Philippines</database>
+      <maxconnections>2</maxconnections>
+    </add>-->
+    <add name="MSSQL" dbtype="MSSQL">
+      <datasource>192.168.88.102</datasource>
+      <userid>sa</userid>
+      <password>*4b7d7fe</password>
+      <database>WMSOA_ZQZCS_Out</database>
+      <maxconnections>2</maxconnections>
+    </add>
+    <!--<add name="MSSQL" dbtype="MSSQL">
+      <datasource>192.168.88.102</datasource>
+      <userid>sa</userid>
+      <password>*4b7d7fe</password>
+      <database>WMSOA_XIANGTAN</database>
+      <maxconnections>2</maxconnections>
+    </add>-->
+  </connectionStrings>
+  <serialnumber>
+    <proc name="proc_get_numberserialno"></proc>
+    <param name="String" value="MRT"></param>
+    <param name="Date" format="yyMM"></param>
+  </serialnumber>
+  <exchagerate mode="Date" field="SailingSchedule.ETD"/>
+  <license>AC5B8CDEFFFE5F6071641CEEC2D3D4D17C829EB0CC7271D68C35E7B6A388BD0B3527A853BF74B334CEC0B6C5B85E31D4A7B7467AFC3C44B4689E4D2B15DFD1ED42F29770E8C620276CA40D3494227175C106FD024AFA21D6B1C3282557BFF1EFFA0279D060DCC400A7C685B62067E184D33007CD3D38A5801845E8912FA25D5E</license>
+</manifest>

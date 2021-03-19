@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1A8A63DE-E691-412D-B383-0F86AF52DB9E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobileDeviceWebAPI</RootNamespace>
+    <AssemblyName>MobileDeviceWebAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AsposeLicense">
+      <HintPath>..\Lib\AsposeLicense.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net1215, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Common.Logging.Log4Net1215.3.3.1\lib\net40\Common.Logging.Log4Net1215.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Diagnostics.Tracing.EventSource, Version=1.1.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net40\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Pivots, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Pivots.dll</HintPath>
+    </Reference>
+    <Reference Include="Pivots.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Pivots.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="Pivots.CType, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Pivots.CType.dll</HintPath>
+    </Reference>
+    <Reference Include="Pivots.Report, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Pivots.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Pivots.VisualChart, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Pivots.VisualChart.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.5.1.0\lib\net451\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spring.Aop, Version=1.3.2.40943, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Aop.1.3.2\lib\net40\Spring.Aop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.3.2.40943, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Core.1.3.2\lib\net40\Spring.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spring.Web, Version=1.3.2.40943, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Web.1.3.2\lib\net40\Spring.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\AutoMapper.dll" />
+    <Content Include="bin\AutoMapper.xml" />
+    <Content Include="bin\Common.Logging.Core.dll" />
+    <Content Include="bin\Common.Logging.dll" />
+    <Content Include="bin\Common.Logging.Log4Net1215.dll" />
+    <Content Include="bin\CONFIGURATION.XML">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\DevExpress.Data.v16.1.dll" />
+    <Content Include="bin\DevExpress.Xpo.v16.1.dll" />
+    <Content Include="bin\Mappings\{49FE28C5-478F-4869-96F3-71B91553AF67}.gpm.txt" />
+    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
+    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
+    <Content Include="bin\Microsoft.AI.Web.dll" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\MobileDeviceWebAPI.dll" />
+    <Content Include="bin\MobileDeviceWebAPI.pdb" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Pivots.BLL.dll" />
+    <Content Include="bin\Pivots.BLL.Domain.dll" />
+    <Content Include="bin\Pivots.BLL.Domain.pdb" />
+    <Content Include="bin\Pivots.CType.dll" />
+    <Content Include="bin\Pivots.Data.dll" />
+    <Content Include="bin\Pivots.Data.pdb" />
+    <Content Include="bin\Pivots.dll" />
+    <Content Include="bin\Pivots.Network.dll" />
+    <Content Include="bin\Pivots.Network.pdb" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\Spring.Aop.dll" />
+    <Content Include="bin\Spring.Core.dll" />
+    <Content Include="bin\Spring.Web.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\InBoundController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\ApplicationInsights.config" />
+    <Content Include="bin\MobileDeviceWebAPI.dll.config" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bin\Config\Configuration-Objects.pcfg" />
+    <Content Include="bin\Config\Dict-Objects.pcfg" />
+    <Content Include="bin\Config\log4net.config" />
+    <Content Include="bin\Config\Model-Objects.pcfg" />
+    <Content Include="bin\Config\Sysmsgs-Settings.pcfg" />
+    <Content Include="bin\Config\BusinessLogicLayer-Mapping.pcfg" />
+    <Content Include="bin\Config\PageSettings-Settings.pcfg" />
+    <Content Include="bin\Config\Receiver-Settings.pcfg" />
+    <Content Include="bin\Config\Report-Settings.pcfg" />
+    <Content Include="bin\Config\Routings-Settings.pcfg" />
+    <Content Include="bin\Config\Strategies-Settings.pcfg" />
+    <Content Include="bin\Config\Viewschema-Settings.pcfg" />
+    <Content Include="bin\Config\Visualcharts-Settings.pcfg" />
+    <Content Include="bin\Config\Workflow-Settings.pcfg" />
+    <Content Include="bin\Mappings\{01153A60-8265-47EA-AE61-1B589275850A}.gpm" />
+    <Content Include="bin\Mappings\{0E4D2E3F-7E44-4D8F-84D2-8E4E3C9849D7}.gpm" />
+    <Content Include="bin\Mappings\{10123092-B3AB-4DCB-8229-6B5A1E3EE72C}.gpm" />
+    <Content Include="bin\Mappings\{1CB85A73-CB1A-4155-ABF8-DE4F44586533}.gpm" />
+    <Content Include="bin\Mappings\{2726A3D7-82EB-4A3D-8A4F-076EB184F091}.gpm" />
+    <Content Include="bin\Mappings\{2A4A920D-A42A-40EB-8132-72B40349AF86}.gpm" />
+    <Content Include="bin\Mappings\{2A5321D8-D29F-4E28-AE41-72004E41E52F}.gpm" />
+    <Content Include="bin\Mappings\{2FA33C53-DA70-4F8A-97D5-84B9C7D09286}.gpm" />
+    <Content Include="bin\Mappings\{32B8DFB6-C68D-4B0F-A123-CE61D179206C}.gpm" />
+    <Content Include="bin\Mappings\{3591F5E5-82A1-432E-AE67-72C7185B55D3}.gpm" />
+    <Content Include="bin\Mappings\{390F24DC-D1E5-4D29-982C-AD40BFBEFCA2}.gpm" />
+    <Content Include="bin\Mappings\{390F24DC-D1E5-4D29-982C-AD40BFBEFCA2}.gpm.bak" />
+    <Content Include="bin\Mappings\{392136DD-C410-4387-9031-9E49669F14EF}.gpm" />
+    <Content Include="bin\Mappings\{39311157-C586-49B1-B3C7-6308BE91972F}.gpm" />
+    <Content Include="bin\Mappings\{3D211654-1CFB-4834-B39B-3269FF2265D5}.gpm" />
+    <Content Include="bin\Mappings\{3E740CDF-2C42-4FCB-9358-B35FD6C86AC7}.gpm" />
+    <Content Include="bin\Mappings\{406ABCEF-F082-4945-8D5D-7D3A7ACCCC26}.gpm" />
+    <Content Include="bin\Mappings\{43C8DDF7-CC56-4666-8F89-A2750DADB77D}.gpm" />
+    <Content Include="bin\Mappings\{43F9ECAE-A295-4A8D-8558-9882F5DBD53D}.gpm" />
+    <Content Include="bin\Mappings\{459A0C0B-B104-444C-A283-784D1E97393C}.gpm" />
+    <Content Include="bin\Mappings\{49FE28C5-478F-4869-96F3-71B91553AF67}.gpm" />
+    <Content Include="bin\Mappings\{4B95D20C-D662-4A33-8404-62FB531A683B}.gpm" />
+    <Content Include="bin\Mappings\{52DEAC7E-E5BE-48B7-9519-31B2CE1F1602}.gpm" />
+    <Content Include="bin\Mappings\{59CA9E01-E955-4F23-BC59-B068B22F50C8}.gpm" />
+    <Content Include="bin\Mappings\{5D861C44-3B9F-4C4C-8FE1-AFB3B079B154}.gpm" />
+    <Content Include="bin\Mappings\{61BC006A-A45A-4368-95DE-3C9C3C942898}.gpm" />
+    <Content Include="bin\Mappings\{70ED7B5A-59A2-4027-A9B3-63E185AAB84D}.gpm" />
+    <Content Include="bin\Mappings\{76497B16-4C40-433A-B197-5C70C624F644}.gpm" />
+    <Content Include="bin\Mappings\{7D055A59-EE99-4BED-A8EA-3B7235761B0B}.gpm" />
+    <Content Include="bin\Mappings\{86A3DCB9-4B06-4E3C-86B0-ED437F4FDCFD}.gpm" />
+    <Content Include="bin\Mappings\{88EF6990-4B3A-46C4-AF78-CF6EFF31A301}.gpm" />
+    <Content Include="bin\Mappings\{9230AD18-E68A-4D55-9CE7-E9BD8C5DFE18}.gpm" />
+    <Content Include="bin\Mappings\{954B3CD4-E9E8-4B5D-BCFB-3514FF50A2B1}.gpm" />
+    <Content Include="bin\Mappings\{9EC0E632-8207-4D87-923A-479647F92C41}.gpm" />
+    <Content Include="bin\Mappings\{9EC8D8F4-8BC4-4D61-9EDF-1B3AD9B1CDA9}.gpm" />
+    <Content Include="bin\Mappings\{9F908738-70A5-4B27-95EF-FB55A7E4B2A4}.gpm" />
+    <Content Include="bin\Mappings\{A40C5CCB-4F79-49DD-B809-13BE8B14D1E6}.gpm" />
+    <Content Include="bin\Mappings\{A43D8D41-929E-4E83-A1C3-3C9979ED4AB9}.gpm" />
+    <Content Include="bin\Mappings\{A66FAA10-FE12-4D97-89A0-87A82CDB14DC}.gpm" />
+    <Content Include="bin\Mappings\{A717297C-EE0B-4C15-8504-578B6CF97103}.gpm" />
+    <Content Include="bin\Mappings\{C73C6180-A35C-4867-90BF-139E509B508E}.gpm" />
+    <Content Include="bin\Mappings\{C80F9FD7-C0A8-4852-A823-194AEA7AB953}.gpm" />
+    <Content Include="bin\Mappings\{CF4330A9-4CC4-4064-873A-4453DE001F73}.gpm" />
+    <Content Include="bin\Mappings\{D892F79E-495E-4FFF-80AD-A28DF8659A07}.gpm" />
+    <Content Include="bin\Mappings\{D97E374C-08A3-4EE7-9AFB-692917E006CB}.gpm" />
+    <Content Include="bin\Mappings\{EB69F9F0-BB78-4682-B40C-18EA523F1474}.gpm" />
+    <Content Include="bin\Mappings\{EF048B20-AECA-458E-83D0-B693EF4068FB}.gpm" />
+    <Content Include="bin\Mappings\{EF2A9978-1BA8-45DE-BE35-AB74B7763729}.gpm" />
+    <Content Include="bin\Mappings\{FE49C99F-6C83-4620-B168-B95EFBDC6FB6}.gpm" />
+    <Content Include="bin\Mappings\{FEC25053-64A7-4B1D-A556-2662EFE208A8}.gpm" />
+    <Content Include="bin\Mappings\{FFA0F49D-3825-45FB-ADFA-5F8CA3309719}.gpm" />
+    <Content Include="bin\Rpt\ASNFORM.xrpt" />
+    <Content Include="bin\Rpt\FIAT出库清单.xrpt" />
+    <Content Include="bin\Rpt\FIAT出库清单1.xrpt" />
+    <Content Include="bin\Rpt\Inbound Record.xrpt" />
+    <Content Include="bin\Rpt\InventoryReport.xrpt" />
+    <Content Include="bin\Rpt\JHJ_Logo\入库清单.xrpt" />
+    <Content Include="bin\Rpt\JHJ_Logo\出库清单.xrpt" />
+    <Content Include="bin\Rpt\JHJ_Logo\博泽出库清单.xrpt" />
+    <Content Include="bin\Rpt\JHJ_Logo\复件 库位单.xrpt" />
+    <Content Include="bin\Rpt\JHJ_Logo\天合出库清单.xrpt" />
+    <Content Include="bin\Rpt\JHJ_Logo\库位单.xrpt" />
+    <Content Include="bin\Rpt\JHJ_Logo\库存清单.xrpt" />
+    <Content Include="bin\Rpt\JHJ_Logo\库存盘点清单.xrpt" />
+    <Content Include="bin\Rpt\MaterialsRequisitionForm.xrpt" />
+    <Content Include="bin\Rpt\OutboundBill.xrpt" />
+    <Content Include="bin\Rpt\PickupListBill.xrpt" />
+    <Content Include="bin\Rpt\下架清单.xrpt" />
+    <Content Include="bin\Rpt\任务清单.xrpt" />
+    <Content Include="bin\Rpt\入库清单.xrpt" />
+    <Content Include="bin\Rpt\出库清单.xrpt" />
+    <Content Include="bin\Rpt\博泽出库清单.xrpt" />
+    <Content Include="bin\Rpt\博泽出库清单.xrpt1" />
+    <Content Include="bin\Rpt\复件 库位单.xrpt" />
+    <Content Include="bin\Rpt\天合NPI出库清单.xrpt" />
+    <Content Include="bin\Rpt\天合出库清单 - 副本.xrpt" />
+    <Content Include="bin\Rpt\天合出库清单.xrpt" />
+    <Content Include="bin\Rpt\天合出库清单.xrpt.bak" />
+    <Content Include="bin\Rpt\库位单.xrpt" />
+    <Content Include="bin\Rpt\库位标签.xrpt" />
+    <Content Include="bin\Rpt\库位标签.xrpt.bak" />
+    <Content Include="bin\Rpt\库位标签2.xrpt" />
+    <Content Include="bin\Rpt\库存汇总清单.xrpt" />
+    <Content Include="bin\Rpt\库存清单.xrpt" />
+    <Content Include="bin\Rpt\库存盘点清单.xrpt" />
+    <Content Include="bin\Rpt\新建文件夹\博泽出库清单.xrpt" />
+    <Content Include="bin\Rpt\新建文件夹\天合出库清单.xrpt" />
+    <Content Include="bin\Rpt\标签生成.xrpt" />
+    <Content Include="bin\Rpt\派车清单.xrpt" />
+    <Content Include="bin\Rpt\移库清单.xrpt" />
+    <Content Include="bin\Rpt\补货清单.xrpt" />
+    <None Include="Properties\PublishProfiles\WMSOAMobileDeviceWebAPI.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\zh-Hans\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FPLabelData\FPLabelData.csproj">
+      <Project>{D4C9124F-5537-4CBF-9D47-20C0571EA57F}</Project>
+      <Name>FPLabelData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabelPrintDAL\LabelPrintDAL.csproj">
+      <Project>{fd73fc8f-433a-459d-864e-6ed7c043eb6e}</Project>
+      <Name>LabelPrintDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pivots.Network\Pivots.Network.csproj">
+      <Project>{bed71c39-31e4-463b-9ca7-3e8fb30d523a}</Project>
+      <Name>Pivots.Network</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>27601</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:27541/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,300 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "material",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name": "indate",
+            "type": "date"
+        },
+        {
+            "name": "storageposition",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name":"package",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"lot",
+            "type":"string"
+        },
+        {
+            "name":"amount",
+            "type":"double"
+        },        
+        {
+            "name":"custstorageposition",
+            "type":"string"
+        },
+        {
+            "name":"movingsign",
+            "type":"bool"
+        },
+        {
+            "name":"storagestrategy",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"warehouse",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"customer",
+            "mapping":"material.customer",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"hasconfirm",
+            "type":"bool"
+        },
+        {
+            "name":"sunumber",
+            "type":"string"
+        },
+        {
+            "name":"snp",
+            "type":"int"
+        }                       
+    ],
+    "columns": [
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'storagestrategy',
+            text: 'Project',
+            editor: {
+                xtype: 'excombo',
+                displayField: 'name',
+                valueField: 'id',
+                submitField: 'object',
+                lastQuery:'',
+                allowBlank: false,  
+                store:Ext.create('Pivots.store.S_Dict', {
+                    autoLoad:true,
+                    model:'Pivots.model.M_Dict',
+                    proxy: {
+                        type: 'ajax',
+                        url: Pivots.core.Gobals.baseUrl + 'actions/DictServices.ashx',
+                        extraParams: {
+                            dict : 'storagestrategy',
+                            action : '64F5098C6AEC4C768FA17AFAF297A2A6'
+                        },                                                          
+                        reader: {
+                            type: 'json',
+                            root: 'recordList',
+                            totalProperty: 'recordCount'
+                        }
+                    }               
+                })
+            }            
+        }, 
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'customer',
+            text: 'Customer ',
+            editor: {
+                xtype: 'excombo',
+                displayField: 'name',
+                valueField: 'id',
+                submitField: 'object',
+                lastQuery:'',                
+                readOnly:true,   
+                store:Ext.create('Pivots.store.S_Dict', {
+                    autoLoad:true,
+                    model:'Pivots.model.M_Dict',
+                    proxy: {
+                        type: 'ajax',
+                        url: Pivots.core.Gobals.baseUrl + 'actions/DictServices.ashx',
+                        extraParams: {
+                            dict : 'customer',
+                            action : '64F5098C6AEC4C768FA17AFAF297A2A6'
+                        },                                                          
+                        reader: {
+                            type: 'json',
+                            root: 'recordList',
+                            totalProperty: 'recordCount'
+                        }
+                    }               
+                })
+            }    
+        },           
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'material',
+            text: 'Materiel No.',
+            displayField:'name',
+            editor: {
+                xtype: 'excombo',
+                displayField: 'name',
+                valueField: 'id',
+                submitField: 'object',
+                lastQuery:'',
+                allowBlank: false,
+                readOnly:true,  
+                store:Ext.create('Pivots.store.S_Dict', {
+                    autoLoad:true,
+                    model:'Pivots.model.M_Dict',
+                    proxy: {
+                        type: 'ajax',
+                        url: Pivots.core.Gobals.baseUrl + 'actions/DictServices.ashx',
+                        extraParams: {
+                            dict : 'material',
+                            action : '64F5098C6AEC4C768FA17AFAF297A2A6'
+                        },                                                          
+                        reader: {
+                            type: 'json',
+                            root: 'recordList',
+                            totalProperty: 'recordCount'
+                        }
+                    }               
+                })
+            }  
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'storageposition',
+            text: 'Location',                                                                                     
+            editor: {
+                xtype: 'excombo',
+                displayField: 'name',
+                valueField: 'id',
+                submitField: 'object',
+                lastQuery:'',
+                allowBlank: false,  
+                allowPreValue:true,
+                store:Ext.create('Pivots.store.S_Dict', {
+                    autoLoad:true,
+                    model:'Pivots.model.M_Dict',
+                    proxy: {
+                        type: 'ajax',
+                        url: Pivots.core.Gobals.baseUrl + 'actions/DictServices.ashx',
+                        extraParams: {
+                            dict : 'storageposition',
+                            action : '64F5098C6AEC4C768FA17AFAF297A2A6'
+                        },                                                          
+                        reader: {
+                            type: 'json',
+                            root: 'recordList',
+                            totalProperty: 'recordCount'
+                        }
+                    }               
+                })
+            }
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'package',
+            text: 'UOM',                                                                                     
+            editor: {
+                xtype: 'excombo',
+                displayField: 'name',
+                valueField: 'id',
+                submitField: 'object',
+                lastQuery:'',                                               
+                allowBlank: false,                  
+                store:Ext.create('Pivots.store.S_Dict', {
+                    autoLoad:true,
+                    model:'Pivots.model.M_Dict',
+                    proxy: {
+                        type: 'ajax',
+                        url: Pivots.core.Gobals.baseUrl + 'actions/DictServices.ashx',
+                        extraParams: {
+                            dict : 'package',
+                            action : '64F5098C6AEC4C768FA17AFAF297A2A6'
+                        },                                                          
+                        reader: {
+                            type: 'json',
+                            root: 'recordList',
+                            totalProperty: 'recordCount'
+                        }
+                    }               
+                })
+            }
+        },
+        {
+            "header": "Quantity",
+            "dataIndex": "amount",
+            "hidden": false,
+            "format": "0",
+            "width": 80,
+            "editor": {
+                "xtype": 'numberfield',                
+                "allowDecimals":true,
+                "minValue": 0,
+                "readOnly":true
+            }
+        },
+        {
+            "header": "Batch No.",
+            "dataIndex": "lot",
+            "hidden": false,
+            "width": 130,
+            "editor": {
+                "allowBlank": false,
+                "readOnly":true
+            }
+        }, 
+        {
+            "header": "SNP",
+            "dataIndex": "snp",
+            "hidden": false,
+            "format": "0",
+            "width": 80,
+            "editor": {
+                "xtype": 'numberfield',                
+                "allowDecimals":true,
+                "minValue": 0,
+                "readOnly":true
+            }
+        },        
+        {
+            "header": "Supplier",
+            "dataIndex": "sunumber",
+            "hidden": false,
+            "width": 130,
+            "editor": {
+                "allowBlank": true
+            }
+        },          
+        {
+            "header": "Receipt No.",
+            "dataIndex": "custstorageposition",
+            "hidden": false,
+            "width": 130,
+            "editor": {
+                "allowBlank": true
+            }
+        }, 
+        {
+            "xtype": "datecolumn",
+            "header": "Inbound Time",
+            "dataIndex": "indate",
+            "hidden": false,
+            "width": 130,
+            "format": 'Y-m-d H:i',
+            "editor": {
+                "xtype": 'datetimefield',
+                "format": 'Y-m-d  H:i',
+                "allowBlank": true,
+                "readOnly":true
+            }
+        },         
+        {
+            "header": "Whether to Confirm",
+            "dataIndex": "hasconfirm",
+            "hidden": false,
+            "width": 130,
+            "renderer":function(v){
+                if(v)
+                    return "Confirmed";
+                else
+                    return "Unconfirmed";                       
+            }
+        }            
+    ]
+}

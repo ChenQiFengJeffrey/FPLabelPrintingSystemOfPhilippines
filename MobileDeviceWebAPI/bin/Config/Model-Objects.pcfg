@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 被2011 rel. 2 sp1 (Wendell Dai) 使用XMLSpy vJHJ编辑的 (http://www.altova.com) by -->
+<objects xmlns="http://www.springframework.net"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.net
+		http://www.springframework.net/xsd/spring-objects.xsd">
+       
+	  <object id="BaseBLLUtils" type="Pivots.BLL.BaseBLLUtils,Pivots.BLL"></object>
+	  <object id="ConfigProvider" type="Pivots.BLL.ConfigProvider,Pivots.BLL"></object>	
+	  <object id="Model_OutBoundRec" type="Pivots.BLL.Domain.Model.OutBoundRecModel,Pivots.BLL.Domain"></object>	 
+	  <object id="Model_InBoundRec" type="Pivots.BLL.Domain.Model.InBoundRecModel,Pivots.BLL.Domain"></object>	 
+	  <object id="Model_InventoryRec" type="Pivots.BLL.Domain.Model.InventoryRecModel,Pivots.BLL.Domain"></object>	  	   	  
+	  <object id="Model_PickingSchedule" type="Pivots.BLL.Domain.Model.PickingScheduleModel,Pivots.BLL.Domain"></object>
+	  <object id="Model_SafetyStockStatus" type="Pivots.BLL.Domain.Model.SafetyStockStatusModel,Pivots.BLL.Domain"></object> 	  
+	  <object id="Model_VehicleDispatchingInfo" type="Pivots.BLL.Domain.Model.VehicleDispatchingInfoModel,Pivots.BLL.Domain"></object>   
+	  <object id="Model_StoragePosition" type="Pivots.BLL.Domain.Model.StoragePositionModel,Pivots.BLL.Domain"></object>
+    <object id="Model_DispatchTime" type="Pivots.BLL.Domain.Model.DictDispatchTimeModel,Pivots.BLL.Domain"></object>
+    <object id="Model_MRFRecord" type="Pivots.BLL.Domain.Model.MRFRecordModel,Pivots.BLL.Domain"></object>
+	  <object id="Model_ASNRecord" type="Pivots.BLL.Domain.Model.ASNRecordModel,Pivots.BLL.Domain"></object>
+</objects>

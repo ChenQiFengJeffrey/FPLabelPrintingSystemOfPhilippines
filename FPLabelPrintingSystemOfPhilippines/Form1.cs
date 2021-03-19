@@ -2,6 +2,7 @@
 using DevExpress.XtraTab;
 using DevExpress.XtraTab.ViewInfo;
 using FPLabelData;
+using FPLabelData.Entity;
 using FPLabelPrintingSystemOfPhilippines.ColumnNameConfig;
 using FPLabelPrintingWcfService;
 using LabelPrintDAL;
@@ -33,6 +34,7 @@ namespace FPLabelPrintingSystemOfPhilippines
         private DataTable _goodSetTable = null;
         private DataTable _printSetTable = null;
         private DataTable _labelRecordTable = null;
+        private DataTable _itemCodeSNTable = null;
         private DataTable _goodRoTable = null;
         private PrintSet _currentPrintSet = null;
         private List<KeyValuePair<string, string>> _snList = new List<KeyValuePair<string, string>>();
@@ -50,6 +52,7 @@ namespace FPLabelPrintingSystemOfPhilippines
             InitGoodRoTable();//成品RO配置
             InitPrintSetTable();//打印配置
             InitLabelRecordTable();//标签记录
+            InitItemCodeSNTable();//原材料SN记录
             Task.Run(() => LabelPrintingWCFServiceStar());//启动WCF
             LogHelper.Setup();//启动Log4net
         }
@@ -189,6 +192,26 @@ namespace FPLabelPrintingSystemOfPhilippines
             
             bindGrid(dataGridView3, _labelRecordTable, new int[] { 4 });
         }
+
+        /// <summary>
+        /// 初始化标签记录
+        /// </summary>
+        public void InitItemCodeSNTable()
+        {
+            ItemCodeSNConfig record = new ItemCodeSNConfig();
+            _itemCodeSNTable = new DataTable();
+            _itemCodeSNTable.Columns.Add(record.Oid, typeof(string));//0
+            _itemCodeSNTable.Columns.Add(record.RoNumber, typeof(string));//1
+            _itemCodeSNTable.Columns.Add(record.FinishedProductNum, typeof(string));//2
+            _itemCodeSNTable.Columns.Add(record.ItemCode, typeof(string));//3
+            _itemCodeSNTable.Columns.Add(record.ItemName, typeof(string));//4
+            _itemCodeSNTable.Columns.Add(record.SerivalNum, typeof(string));//5
+            _itemCodeSNTable.Columns.Add(record.MainItem, typeof(string));//6
+            _itemCodeSNTable.Columns.Add(record.Status, typeof(string));//7
+            _itemCodeSNTable.Columns.Add(record.PrintDate, typeof(string));//8
+
+            bindGrid(dataGridView6, _itemCodeSNTable, new int[] { 0 });
+        }
         /// <summary>
         /// Form1加载
         /// </summary>
@@ -231,6 +254,10 @@ namespace FPLabelPrintingSystemOfPhilippines
                 case "navbaritem6"://成品RO配置
                     xtraTabPage6.PageVisible = true;
                     xtraTabPage6.Show();
+                    break;
+                case "navbaritem7"://成品RO配置
+                    xtraTabPage7.PageVisible = true;
+                    xtraTabPage7.Show();
                     break;
                 default:
                     break;
@@ -547,7 +574,7 @@ namespace FPLabelPrintingSystemOfPhilippines
                     dt = new SQLiteHelper().ExecuteQuery(queryStrbd.ToString());
 
                     QueryPrintSetCallbackDel del = QueryPrintSetCallback;
-                    dataGridView4.BeginInvoke(del, dt);
+                    dataGridView2.BeginInvoke(del, dt);
                     return;
                 }
                 catch (Exception ex)
@@ -1080,7 +1107,7 @@ namespace FPLabelPrintingSystemOfPhilippines
                     dt = new SQLiteHelper().ExecuteQuery(queryStrbd.ToString(), paramList.ToArray());
 
                     QueryLabelRecordCallbackDel del = QueryLabelRecordCallback;
-                    dataGridView4.BeginInvoke(del, dt);
+                    dataGridView3.BeginInvoke(del, dt);
                     return;
                 }
                 catch (Exception ex)
@@ -1132,6 +1159,129 @@ namespace FPLabelPrintingSystemOfPhilippines
                     );
             }
             bindGrid(dataGridView3, _labelRecordTable, new int[] { 4 });
+            return;
+        }
+
+        /// <summary>
+        /// 原材料SN_导出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button22_Click(object sender, EventArgs e)
+        {
+            DataGridViewRowCollection rowCollection = dataGridView6.Rows;
+            if (rowCollection.Count == 0)
+            {
+                MessageBox.Show("There aren't records selected");
+            }
+            string snExcelPath = System.Configuration.ConfigurationManager.AppSettings["SNExcelPath"];
+            List<ItemCodeSN> dtoList = new List<ItemCodeSN>();
+            foreach (DataGridViewRow row in rowCollection)
+            {
+                ItemCodeSN dto = new ItemCodeSN();
+                dto.RoNumber = row.Cells[1].Value.ToString();
+                dto.FinishedProductNum = row.Cells[2].Value.ToString();
+                dto.ItemCode = row.Cells[3].Value.ToString();
+                dto.ItemName = row.Cells[4].Value.ToString();
+                dto.SerivalNum = row.Cells[5].Value.ToString();
+                dto.MainItem = row.Cells[6].Value.ToString();
+                dto.Status = row.Cells[7].Value.ToString();
+                dtoList.Add(dto);
+            }
+            XtraReport3 label = new XtraReport3();
+            label.DataSource = dtoList;
+            label.PrintingSystem.ShowMarginsWarning = false;
+            label.PrintingSystem.ShowPrintStatusDialog = true;
+            label.ExportToXlsx(snExcelPath + "RawMaterialSNList_" + DateTime.Now.ToString("yyyyMMdd") + ".xlsx");
+            //ReportPrintTool tool = new ReportPrintTool(label);
+            //tool.Print();
+        }
+        /// <summary>
+        /// 原材料SN_查询
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button21_Click(object sender, EventArgs e)
+        {
+            string roText = textBox2.Text;
+            string rmCodeText= textBox3.Text;
+            List<string> roList = new List<string>();
+            List<string> rmCodeList = new List<string>();
+            if (!string.IsNullOrEmpty(roText))
+            {
+                List<string> roTextList= roText.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                foreach (var item in roTextList)
+                {
+                    roList.Add("'" + item.Trim() + "'");
+                }
+            }
+            if (!string.IsNullOrEmpty(rmCodeText))
+            {
+                List<string> rmCodeTextList = rmCodeText.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                foreach (var item in rmCodeTextList)
+                {
+                    rmCodeList.Add("'" + item.Trim() + "'");
+                }
+            }
+            Task.Run(() => QueryItemCodeSN(roList, rmCodeList));
+            return;
+        }
+        delegate void QueryItemCodeSNCallbackDel(DataTable dt);
+        public void QueryItemCodeSN(List<string> roList, List<string> rmCodeList)
+        {
+            lock (lockObj)
+            {
+                try
+                {
+                    List<SQLiteParameter> paramList = new List<SQLiteParameter>();
+                    StringBuilder queryStrbd = new StringBuilder();
+                    queryStrbd.Append("select * from ItemCodeSN where 1=1 ");
+                    if (roList!=null&&roList.Count>0)
+                    {
+                        queryStrbd.Append(" and RoNumber in ( ");
+                        queryStrbd.Append(string.Join(",", roList));
+                        queryStrbd.Append(" ) ");
+                        //paramList.Add(SQLiteHelper.MakeSQLiteParameter("@RoNumber", DbType.String, string.Join(",", roList)));
+                    }
+                    if (rmCodeList != null && rmCodeList.Count > 0)
+                    {
+                        queryStrbd.Append(" and ItemCode in ( ");
+                        queryStrbd.Append(string.Join(",", rmCodeList));
+                        queryStrbd.Append(" ) ");
+                        //paramList.Add(SQLiteHelper.MakeSQLiteParameter("@ItemCode", DbType.String, string.Join(",", rmCodeList)));
+                    }
+                    queryStrbd.Append(" order by Oid desc");
+                    DataTable dt = new DataTable();
+                    dt = new SQLiteHelper().ExecuteQuery(queryStrbd.ToString(), paramList.ToArray());
+
+                    QueryItemCodeSNCallbackDel del = QueryItemCodeSNCallback;
+                    dataGridView6.BeginInvoke(del, dt);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+        public void QueryItemCodeSNCallback(DataTable dt)
+        {
+            _itemCodeSNTable.Clear();//清除所有数据，行不保留
+            foreach (DataRow row in dt.Rows)
+            {
+                _itemCodeSNTable.Rows.Add(
+                    row["Oid"],
+                    row["RoNumber"],
+                    row["FinishedProductNum"],
+                    row["ItemCode"],
+                    row["ItemName"],
+                    row["SerivalNum"],
+                    row["MainItem"],
+                    row["Status"],
+                    row["PrintDate"]
+                    );
+            }
+            bindGrid(dataGridView6, _itemCodeSNTable, new int[] { 0 });
             return;
         }
         /// <summary>
@@ -1520,6 +1670,5 @@ namespace FPLabelPrintingSystemOfPhilippines
                 GC.Collect();
             }
         }
-
     }
 }

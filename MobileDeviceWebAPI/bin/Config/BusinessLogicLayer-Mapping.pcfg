@@ -1,0 +1,365 @@
+<!-- 被2011 rel. 2 sp1 (Wendell Dai) 使用XMLSpy vJHJ编辑的 (http://www.altova.com) by -->
+<manifest>
+	<BusinessLogicLayerMappings>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.BillBookingOrder</class>
+				<class>Pivots.Data.Entity.DocBookingOrder</class>
+				<class>Pivots.Data.Entity.BookingOrderBase</class>
+			</classes>
+			<model>Pivots.BLL.Model.BookingOrderModel</model>
+			<bll assembly="Pivots.BLL">BookingOrderBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.ContainerRec</class>
+			</classes>
+			<model>Pivots.BLL.Model.ContainerRecModel</model>
+			<bll assembly="Pivots.BLL">ContainerRecBLL</bll>
+		</mapping>		
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.ContainerDesc</class>
+			</classes>
+			<model>Pivots.BLL.Model.ContainerDescModel</model>
+			<bll assembly="Pivots.BLL">ContainerDescBLL</bll>
+		</mapping>	
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.ContainerDesc</class>
+			</classes>
+			<model>Pivots.BLL.Model.ContainerDescModel</model>
+			<bll assembly="Pivots.BLL">ContainerDescBLL</bll>
+		</mapping>						
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.ContainerArchive</class>
+			</classes>
+			<model>Pivots.BLL.Model.ContainerArchiveModel</model>
+			<bll assembly="Pivots.BLL">DContainerArchiveBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.MarineArchives</class>
+			</classes>
+			<model>Pivots.BLL.Model.MarineArchivesModel</model>
+			<bll assembly="Pivots.BLL">MarineArchivesBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.Menu</class>
+			</classes>
+			<model>Pivots.BLL.Model.MenuModel</model>
+			<bll assembly="Pivots.BLL">MenuBLL</bll>
+		</mapping>	
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.RevisingInfo</class>
+			</classes>
+			<model>Pivots.BLL.Model.RevisingInfoModel</model>
+			<bll assembly="Pivots.BLL">RevisingInfoBLL</bll>
+		</mapping>						
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictClientType</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictClientTypeModel</model>
+			<bll assembly="Pivots.BLL">DictClientTypeBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.SailingSchedule</class>
+			</classes>
+			<model>Pivots.BLL.Model.SailingScheduleModel</model>
+			<bll assembly="Pivots.BLL">SailingScheduleBLL</bll>
+		</mapping>			
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.SerialNo</class>
+			</classes>
+			<model>Pivots.BLL.Model.SerialNoModel</model>
+			<bll assembly="Pivots.BLL">SerialNoBLL</bll>
+		</mapping>	
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.SignedMarineArchives</class>
+			</classes>
+			<model>Pivots.BLL.Model.SignedMarineArchivesModel</model>
+			<bll assembly="Pivots.BLL">SignedMarineArchivesBLL</bll>
+		</mapping>	
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.SignedSailingSchedule</class>
+			</classes>
+			<model>Pivots.BLL.Model.SignedSailingScheduleModel</model>
+			<bll assembly="Pivots.BLL">SignedSailingScheduleBLL</bll>
+		</mapping>	
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.SignedVoyages</class>
+			</classes>
+			<model>Pivots.BLL.Model.SignedVoyagesModel</model>
+			<bll assembly="Pivots.BLL">SignedVoyagesBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.User</class>
+				<class>Pivots.Data.Entity.UserDetail</class>				
+			</classes>
+			<model>Pivots.BLL.Model.UserModel</model>
+			<bll assembly="Pivots.BLL">UserBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.Voyages</class>
+			</classes>
+			<model>Pivots.BLL.Model.VoyagesModel</model>
+			<bll assembly="Pivots.BLL">VoyagesBLL</bll>
+		</mapping>													
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictCountry</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictCountryModel</model>
+			<bll assembly="Pivots.BLL">DictCountryBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictCountry</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictCountryModel</model>
+			<bll assembly="Pivots.BLL">DictBargeLoadingAreaBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictBargeUnloadingArea</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictBargeUnloadingAreaModel</model>
+			<bll assembly="Pivots.BLL">DictBargeUnloadingAreaBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictPackage</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictPackageModel</model>
+			<bll assembly="Pivots.BLL">DictPackageBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictPort</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictPortModel</model>
+			<bll assembly="Pivots.BLL">DictPortBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictSalesDept</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictSalesDeptModel</model>
+			<bll assembly="Pivots.BLL">DictSalesDeptBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictSalesman</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictSalesmanModel</model>
+			<bll assembly="Pivots.BLL">DictSalesDeptBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictTypeOfPayment</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictTypeOfPaymentModel</model>
+			<bll assembly="Pivots.BLL">DictTypeOfPaymentBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictBusinessType</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictBusinessTypeModel</model>
+			<bll assembly="Pivots.BLL">DictBusinessTypeBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictCustomerService</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictCustomerServiceModel</model>
+			<bll assembly="Pivots.BLL">DictCustomerServiceBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictENBPOSBLL</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictENBPOSBLLModel</model>
+			<bll assembly="Pivots.BLL">DictENBPOSBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictCNBPOD</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictCNBPODModel</model>
+			<bll assembly="Pivots.BLL">DictCNBPODBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictCNBPOS</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictCNBPOSModel</model>
+			<bll assembly="Pivots.BLL">DictCNBPOSBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictRegion</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictRegionModel</model>
+			<bll assembly="Pivots.BLL">DictRegionBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictCustDeclarationMode</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictCustDeclarationModeModel</model>
+			<bll assembly="Pivots.BLL">DictCustDeclarationModeBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictOriginal</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictOriginalModel</model>
+			<bll assembly="Pivots.BLL">DictOriginalBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictHasWoodenPackage</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictHasWoodenPackageModel</model>
+			<bll assembly="Pivots.BLL">DictHasWoodenPackageBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictFreightClause</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictFreightClauseModel</model>
+			<bll assembly="Pivots.BLL">DictFreightClauseBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictTrailerMode</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictTrailerModeModel</model>
+			<bll assembly="Pivots.BLL">DictTrailerModeBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictTransitClause</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictTransitClauseModel</model>
+			<bll assembly="Pivots.BLL">DictTransitClauseBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictMeansTransport</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictMeansTransportModel</model>
+			<bll assembly="Pivots.BLL">DictMeansTransportBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictBLType</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictBLTypeModel</model>
+			<bll assembly="Pivots.BLL">DictBLTypeBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictContainerOwner</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictContainerOwnerModel</model>
+			<bll assembly="Pivots.BLL">DictContainerOwnerBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictContainerType</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictContainerTypeModel</model>
+			<bll assembly="Pivots.BLL">DictContainerTypeBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictCanvassingAgent</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictCanvassingAgentModel</model>
+			<bll assembly="Pivots.BLL">DictCanvassingAgentBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictShippingUnit</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictShippingUnitModel</model>
+			<bll assembly="Pivots.BLL">DictShippingUnitBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictRegionalCompany</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictRegionalCompanyModel</model>
+			<bll assembly="Pivots.BLL">DictRegionalCompanyBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictCourse</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictCourseModel</model>
+			<bll assembly="Pivots.BLL">DictCourseBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictCourseType</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictCourseTypeModel</model>
+			<bll assembly="Pivots.BLL">DictCourseTypeBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictRevisingType</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictRevisingTypeModel</model>
+			<bll assembly="Pivots.BLL">DictRevisingTypeBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictArea</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictAreaModel</model>
+			<bll assembly="Pivots.BLL">DictAreaBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictCustomsBroker</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictCustomsBrokerModel</model>
+			<bll assembly="Pivots.BLL">DictCustomsBrokerBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictBookingType</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictBookingTypeModel</model>
+			<bll assembly="Pivots.BLL">DictBookingTypeBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictSwitchBLCO</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictSwitchBLCOModel</model>
+			<bll assembly="Pivots.BLL">DictSwitchBLCOBLL</bll>
+		</mapping>
+		<mapping>
+			<classes>
+				<class>Pivots.Data.Entity.DictTypeOfShip</class>
+			</classes>
+			<model>Pivots.BLL.Model.DictTypeOfShipModel</model>
+			<bll assembly="Pivots.BLL">DictTypeOfShipBLL</bll>
+		</mapping>
+	</BusinessLogicLayerMappings>
+</manifest>

@@ -1,0 +1,82 @@
+{
+    "fields": [
+		{"name": "id","type": "object"},
+		{"name": "amount","type": "number"},
+		{"name": "package","type": "auto"},
+		{"name": "carrierid","type": "string"},
+		{"name": "createtime","type": "date"},
+		{"name": "material","type": "auto"},
+		{"name": "missionstatus","type": "string"},
+		{"name": "mrfsummary","type": "auto"},
+		{"name": "status","type": "string"},
+		{"name": "storagestrategy","type": "auto"},
+		{"name": "warehouse","type": "auto"},
+		{"name": "ashelfamount","type": "number"},
+		{"name": "aoutboundamount","type": "number"}
+    ],
+    "columns": [
+		{
+			'dataIndex': 'mrfsummary',
+			'xtype': 'combocolumn',
+			'text':'CCID',
+			'displayField':'mrfid',
+			'width': 220
+		}, 
+		{
+			'dataIndex': 'mrfsummary',
+			'header':'Site ID',
+			'width': 150,
+			'renderer':function(v){
+				if(Ext.isEmpty(v)) return '';
+				return v.deliverylocation.code;
+			}
+		},
+		{
+			'dataIndex': 'material',
+			'xtype': 'combocolumn',
+			'text':'Code No.',
+			'width': 220
+		},  
+		{
+			'dataIndex': 'storagestrategy',
+			'xtype': 'combocolumn',
+			'text':'Project',
+			'width': 220
+		},
+		{
+			'dataIndex': 'package',
+			'xtype': 'combocolumn',
+			'text':'UOM',
+			'width': 220
+		},    
+       {
+			'dataIndex': 'amount',
+			'xtype': 'numbercolumn',
+			'text':'Quantity',
+			'format': '0.00',
+			'width': 220,
+			'renderer': Ext.util.Format.numberRenderer('0.00')
+		},
+		{
+			'dataIndex': 'ashelfamount',
+			'xtype': 'numbercolumn',
+			'text':'Off Location Qty',
+			'format': '0.00',
+			'width': 220,
+			'renderer': Ext.util.Format.numberRenderer('0.00')
+		},
+		{
+			'dataIndex': 'aoutboundamount',
+			'xtype': 'numbercolumn',
+			'text':'Release Qty',
+			'format': '0.00',
+			'width': 220,
+			'renderer': Ext.util.Format.numberRenderer('0.00')
+		},
+		{
+			'dataIndex': 'missionstatus',
+			'header':'Mission Status',
+			'width': 150
+		}
+    ]
+}

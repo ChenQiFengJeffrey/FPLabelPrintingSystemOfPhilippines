@@ -1,0 +1,132 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "material",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name": "amount",
+            "type": "double"
+        },
+        {
+            "name":"openamount",
+            "type":"double"
+        },          
+        {
+            "name": "storageposition",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name":"package",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"lot",
+            "type":"string"
+        },      
+        {
+            "name":"lastchecktime",
+            "type":"date"
+        },
+        {
+            "name":"custstorageposition",
+            "type":"string"
+        },        
+        {
+            "name":"storagestrategy",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"sunumber",
+            "type":"string"
+        },
+        {
+            "name":"snp",
+            "type":"int"
+        },        
+        {
+            "name":"tracingid",
+            "type":"string"
+        },
+        {
+            "name":"palletlabel",
+            "type":"string"
+        }               
+    ],
+    "columns": [
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'storagestrategy',
+            text: 'Project'
+        },      
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'material',
+            text: 'Materiel No.',
+            displayField:'name'        
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'material',
+            text: 'Description ',
+            displayField:'code'
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'storageposition',
+            sortIndex: 'StoragePosition.Name',  
+            text: 'Location'
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'package',
+            text: 'UOM',
+            displayField:'name'
+        },        
+        {
+            "header": "Quantity",
+            "dataIndex": "amount",
+            "hidden": false,
+            "format": "0",
+            "width": 80
+        },
+        {
+            "header": "InitialQuantity",
+            "dataIndex": "openamount",
+            "hidden": false,
+            "format": "0",
+            "width": 80
+        },  
+        {
+            "header": "Batch No.",
+            "dataIndex": "lot",
+            "hidden": false,
+            "width": 130
+        }, 
+        {
+            "header": "SNP",
+            "dataIndex": "snp",
+            "hidden": false,
+            "width": 150
+        },  
+        {
+            "header": "Supplier",
+            "dataIndex": "sunumber",
+            "hidden": false,
+            "width": 150
+        },    
+        {
+            "header": "Receipt No.",
+            "dataIndex": "custstorageposition",
+            "hidden": false,
+            "width": 130,
+            "editor": {
+                "allowBlank": true
+            }
+        }    
+    ]
+}

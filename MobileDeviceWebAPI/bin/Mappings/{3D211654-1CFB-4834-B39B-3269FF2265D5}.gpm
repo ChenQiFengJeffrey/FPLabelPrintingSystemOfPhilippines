@@ -1,0 +1,179 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "material",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name": "indate",
+            "type": "date"
+        },
+        {
+            "name": "storageposition",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name":"package",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"lot",
+            "type":"string"
+        },
+        {
+            "name":"amount",
+            "type":"double"
+        },
+        {
+            "name":"custstorageposition",
+            "type":"string"
+        },
+        {
+            "name":"movingsign",
+            "type":"bool"
+        },
+        {
+            "name":"storagestrategy",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"operator",
+            "type":"Pivots.model.M_Dict"
+        },        
+        {
+            "name":"user",
+            "mapping":"operator.nickname",
+            "type":"string"
+        },
+        {
+            "name":"warehouse",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"movingsign",
+            "type":"bool"
+        },
+        {
+            "name":"customer",
+            "mapping":"material.customer",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"sunumber",
+            "type":"string"
+        },
+        {
+            "name":"snp",
+            "type":"int"
+        },        
+        {
+            "name":"tracingid",
+            "type":"string"
+        },
+        {
+            "name":"palletlabel",
+            "type":"string"
+        },
+        {
+            "name":"asn",
+            "type":"string"
+        },
+        {
+            "name":"custinfofield1",
+            "type":"string"
+        },             
+    ],
+    "columns": [
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'storagestrategy',
+            text: 'Project'
+        }, 
+        {
+            xtype: 'datecolumn',                                           
+            dataIndex: 'indate',
+            text: 'Operation Time ',
+            format:'Y-m-d H:i:s',
+            width:130
+        },            
+        {
+            xtype: 'combocolumn', 
+            dataIndex: 'customer',
+            text: 'Customer '
+        },           
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'material',
+            text: 'Materiel No.',
+            displayField:'name'
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'material',
+            text: 'Description',
+            displayField:'code'
+        },        
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'storageposition',
+            sortIndex: 'StoragePosition.Name',
+            text: 'Location'
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'package',
+            text: 'UOM'
+        },
+        {
+            "header": "Quantity",
+            "dataIndex": "amount",
+            "hidden": false,
+            "format": "0",
+            "width": 80
+        },
+        {
+            "header": "Batch No.",
+            "dataIndex": "lot",
+            "hidden": false,
+            "width": 130
+        }, 
+        {
+            "header": "SNP",
+            "dataIndex": "snp",
+            "hidden": false,
+            "width": 150
+        },         
+        {
+            "header": "Supplier",
+            "dataIndex": "sunumber",
+            "hidden": false,
+            "width": 150
+        },         
+        {
+            "header": "Receipt No.",
+            "dataIndex": "custstorageposition",
+            "hidden": false,
+            "width": 130
+        }, 
+        {
+            "header": "ASN",
+            "dataIndex": "asn",
+            "hidden": false,
+            "width": 130
+        }, 
+        {
+            "header": "Unique Code",
+            "dataIndex": "custinfofield1",
+            "hidden": false,
+            "width": 130
+        }, 
+        {
+            "header": "Operator",                                         
+            "dataIndex": 'user'            
+        }
+    ]
+}

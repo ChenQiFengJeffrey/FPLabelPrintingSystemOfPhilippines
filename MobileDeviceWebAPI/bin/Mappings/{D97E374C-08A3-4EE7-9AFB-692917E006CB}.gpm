@@ -1,0 +1,152 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "originpos",
+            "type": "auto"
+        },      
+        {
+            "name": "material",
+            "type": "auto"
+        },   
+        {
+            "name": "amount",
+            "type": "double"
+        },  
+        {
+            "name": "maxamount",
+            "type": "double"
+        },            
+        {
+            "name": "package",
+            "type": "auto"
+        },    
+        {
+            "name": "snp",
+            "type": "double"
+        }, 
+        {
+            "name": "lot",
+            "type": "string"
+        },          
+        {
+            "name": "sunumber",
+            "type": "string"
+        },
+        {
+            "name": "custstorageposition",
+            "type": "string"
+        },  
+        {
+            "name": "storagestrategy",
+            "type": "auto"
+        },                   
+        {
+            "name": "status",
+            "type": "string"
+        }, 
+        {
+            "name": "missiontype",
+            "type": "auto"
+        },        
+        {
+            "name": "iscomplete",
+            "type": "bool"
+        },        
+        {
+            "name": "submittedid",
+            "type": "string"
+        },  
+        {
+            "name": "tracingid",
+            "type": "string"
+        },    
+        {
+            "name": "palletlabel",
+            "type": "string"
+        },                   
+        {
+            "name": "operator",
+            "type": "auto"
+        },        
+        {
+            "name": "operatetime",
+            "type": "date"
+        }
+    ],
+    "columns": [ 
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'material',
+            text: 'Description ',
+            displayField:'name'
+        },
+        {            
+            header: "Quantity",
+            dataIndex: "amount",
+            hidden: false,
+            format: "0",
+            width: 80,
+            editor: {
+                'xtype': 'numberfield',
+                'allowBlank': false,
+                'decimalPrecision': 0,
+                'minValue':1 
+            },
+            'renderer':function(val, metaData, record){
+                if(val == record.get("maxamount"))
+                    return val;
+                    else
+                    return val + "/" + record.get("maxamount");
+            } 
+        },      
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'package',
+            text: 'UOM',
+            displayField:'name'        
+        },
+        {            
+            header: "SNP",
+            dataIndex: "snp",
+            hidden: false,
+            format: "0",
+            width: 80
+        }, 
+        {
+            header: "Batch No.",
+            dataIndex: "lot",
+            hidden: false,
+            width:140
+        },
+        {                                          
+            dataIndex: 'iscomplete',
+            text: 'Whether Completed',
+            displayField:'name',
+            'renderer':function(val, metaData, record){
+                if(val === false)
+                    return 'No';
+                    else
+                    return 'Yes';
+            } 
+        },
+
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'operator',
+            text: 'Operator',
+            displayField:'name'
+        },
+        {
+            xtype: "datecolumn",
+            header: "Operation Time ",
+            dataIndex: "operatetime",
+            hidden: false,
+            width: 130,
+            format: 'Y-m-d'
+        }      
+    ]
+}

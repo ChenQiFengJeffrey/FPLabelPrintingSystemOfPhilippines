@@ -1,0 +1,178 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "nickname",
+            "type": "string"
+        },
+        {          
+            "name": "password",
+            "type": "string"        
+        },
+        {
+            "name": "company",
+            "type": "string"
+        },
+        {
+            "name": "department",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name": "address",
+            "type": "string"
+        },
+        {
+            "name": "phone",
+            "type": "string"
+        },
+        {
+            "name": "email",
+            "type": "string"
+        },
+        {
+            "name": "isenabled",
+            "type": "bool"
+        },
+        {
+            "name": "isactived",
+            "type": "bool"
+        },
+        {
+            "name": "lastlogintime",
+            "type": "string"
+        },
+        {
+            "name": "role",
+            "type": "object"
+        },
+        {
+            "name": "qrcodelogininfobase64",
+            "type": "string"
+        },
+        {
+            "name": "scankey",
+            "type": "string"
+        }
+    ],
+    "columns": [
+        {
+            "header": "ID",
+            "dataIndex": "id",
+            "hidden": true
+        },
+        {
+            "header": "User Name",
+            "dataIndex": "name",
+            "hidden": false,
+            "width": 100,
+            "editor": {
+                "allowBlank": false
+            }
+        },
+        {
+
+            "header": "Password",
+            "dataIndex": "password",
+            "hidden": false,
+            "width": 100,
+            "editor": {
+                "inputType":"password",
+                "allowBlank": false
+            },
+            "renderer":function(){
+                return "******";                
+            }
+        },   
+        {
+            "header": "Nickname",
+            "dataIndex": "nickname",
+            "hidden": false,
+            "width": 100,
+            "editor": {
+                "allowBlank": false
+            }
+        },
+        {
+            "header": "Company",
+            "flex": 1,
+            "dataIndex": "company",
+            "hidden": false,
+            "editor": {
+                "allowBlank": false
+            }
+        },         
+        {
+            "header": "Address",
+            "flex": 1,
+            "dataIndex": "address",
+            "hidden": false,
+            "editor": {
+                "allowBlank": false
+            }
+        },
+        {
+            "header": "Telephone",
+            "dataIndex": "phone",
+            "hidden": false,
+            "editor": {
+                "allowBlank": false
+            }
+        },
+        {
+            "header": "Email",
+            "flex": 1,
+            "dataIndex": "email",
+            "hidden": false,
+            "editor": {
+                "allowBlank": false
+            }
+        },
+        {
+			"xtype": "checkcolumn",
+            "header": "Whether is available",
+            "dataIndex": "isenabled",
+            "hidden": false,
+			"width":60,
+			stopSelection: false
+        },
+        {
+            "xtype":"datecolumn",
+            "flex": 1,
+            "header": "Last login",
+            "dataIndex": "lastlogintime",
+            "hidden": false,
+            "format":"Y-m-d H:i:s",
+            "width:": 200
+        },        
+		{
+            "header": "Activation",
+            "dataIndex": "isactived",
+            "hidden": false,
+			"width":60,
+			"renderer":function(val){
+				if (val) {
+					return '<span style="color:green;text-align: center;">Yes</span>';
+				} else {
+					return '<span style="color:red;text-align: center;">No</span>';
+				}
+				return val;
+			}
+        },
+        {
+            "xtype":"datecolumn",
+            "flex": 1,
+            "header": "Date of last login",
+            "dataIndex": "lastlogintime",
+            "hidden": false,
+            "format":"Y-m-d H:i:s",
+            "width:": 200
+        }
+    ]
+}

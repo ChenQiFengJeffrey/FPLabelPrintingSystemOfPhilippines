@@ -1,0 +1,93 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },  
+        {
+            "name": "code",
+            "type": "string"
+        }, 
+        {
+            "name": "matbrcdpattern",
+            "type": "string"
+        },  
+        {
+            "name": "ctnbrcdpattern",
+            "type": "string"
+        }, 
+        {
+            "name": "lotbrcdpattern",
+            "type": "string"
+        },  
+        {
+            "name": "qtybrcdpattern",
+            "type": "string"
+        }, 
+        {
+            "name": "itibrcdpattern",
+            "type": "string"
+        }, 
+        {
+            "name": "cstbrcdpattern",
+            "type": "string"
+        },  
+        {
+            "name": "sunbrcdpattern",
+            "type": "string"
+        },          
+        {
+            "name": "order",
+            "type": "int"
+        },
+        {
+            "name": "isvisiabled",
+            "type": "bool"
+        }
+    ],
+    "columns": [
+        {
+            "header": "Name",
+            "dataIndex": "name",
+            "hidden": false,
+            "width": 130,
+            "editor": {
+                "allowBlank": false
+            }
+        },
+        {
+            "header": "Code",
+            "dataIndex": "code",
+            "hidden": false,
+            "width": 130,
+            "editor": {
+                "allowBlank": true
+            }
+        },           
+        {
+            "xtype": 'numbercolumn',
+            "dataIndex": 'order',
+            "text": 'Order',
+            "format":0,
+            "editor": {
+                "xtype": 'numberfield',
+                "allowBlank": false,
+                "minValue": 0,
+                "maxValue": 150000,                                               
+                "decimalPrecision": 0
+            }  
+        },         
+		{
+			"xtype": "checkcolumn",
+            "header": "Visibility",
+            "dataIndex": "isvisiabled",
+            "hidden": false,
+			"width":60,
+			stopSelection: false
+        }
+    ]
+}

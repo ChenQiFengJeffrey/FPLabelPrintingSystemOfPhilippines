@@ -102,6 +102,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColumnNameConfig\ItemCodeSNConfig.cs" />
     <Compile Include="ColumnNameConfig\GoodRoConfig.cs" />
     <Compile Include="ColumnNameConfig\GoodSetConfig.cs" />
     <Compile Include="ColumnNameConfig\LabelRecordConfig.cs" />

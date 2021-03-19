@@ -17,3 +17,6 @@
 /LabelReporting/obj
 /LabelReporting/bin
 .vs
+/MobileWcfService/obj
+/UnitTest
+/MobileWcfService/bin/Debug

@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\ItemCodeSNDTO.cs" />
+    <Compile Include="DTO\ItemCodeSN_UploadDTO.cs" />
+    <Compile Include="Entity\ItemCodeSN.cs" />
     <Compile Include="FinishedProductLabelDTO.cs" />
     <Compile Include="GoodSet.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />

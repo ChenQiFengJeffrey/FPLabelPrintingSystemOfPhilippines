@@ -1,0 +1,47 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "code",
+            "type": "string"
+        },        
+        {
+            "name": "description",
+            "type": "string"
+        }
+    ],
+    "columns": [
+        {
+            "header": "Group Name",
+            "dataIndex": "name",
+            "hidden": false,
+            "width": 130,
+            "editor": {
+                "allowBlank": false
+            }
+        },
+        {
+            "header": "Code",
+            "dataIndex": "code",
+            "hidden": false,
+            "editor": {
+                "allowBlank": false
+            }
+        },      
+        {
+            "header": "Description",
+            "dataIndex": "description",
+            "hidden": false,
+            "editor": {
+                "allowBlank": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,341 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "material",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name": "outdate",
+            "type": "date"
+        },
+        {
+            "name": "storageposition",
+            "type": "Pivots.model.M_Dict"
+        },
+        {
+            "name":"package",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"lot",
+            "type":"string"
+        },
+        {
+            "name":"amount",
+            "type":"double"
+        },
+        {
+            "name":"custstorageposition",
+            "type":"string"
+        },
+        {
+            "name":"movingsign",
+            "type":"bool"
+        },
+        {
+            "name":"storagestrategy",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"operator",
+            "type":"Pivots.model.M_Dict"
+        },        
+        {
+            "name":"user",
+            "mapping":"operator.nickname",
+            "type":"string"
+        },
+        {
+            "name":"warehouse",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"movingsign",
+            "type":"bool"
+        },
+        {
+            "name":"customer",
+            "mapping":"material.customer",
+            "type":"Pivots.model.M_Dict"
+        },
+        {
+            "name":"sunumber",
+            "type":"string"
+        },
+        {
+            "name":"snp",
+            "type":"int"
+        },
+        {
+            "name":"vehicledispatchinginfo",
+            "mapping":"vehicledispatchinginfo",
+            "type":"auto"
+        },        
+        {
+            "name":"tracingid",
+            "type":"string"
+        },
+        {
+            "name":"palletlabel",
+            "type":"string"
+        },
+        {
+            "name":"remark",
+            "type":"string"
+        },
+        {
+            "name":"remark2",
+            "type":"string"
+        },
+        {
+            "name":"remark3",
+            "type":"string"
+        }
+    ],
+    "columns": [
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'storagestrategy',
+            text: 'Project'
+        }, 
+        {
+            xtype: 'datecolumn',                                           
+            dataIndex: 'outdate',
+            text: 'Operation Time ',
+            format:'Y-m-d H:i:s',
+            width:130
+        },       
+        {
+            xtype: 'combocolumn', 
+            dataIndex: 'customer',
+            text: 'Customer '
+        },           
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'material',
+            text: 'Materiel No.',
+            displayField:'name'
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'material',
+            text: 'Description ',
+            displayField:'code'
+        },  
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'storageposition',
+            sortIndex: 'StoragePosition.Name',        
+            text: 'Location'
+        },
+        {
+            xtype: 'combocolumn',                                           
+            dataIndex: 'package',
+            text: 'UOM'
+        },
+        {
+            "header": "Quantity",
+            "dataIndex": "amount",
+            "hidden": false,
+            "format": "0",
+            "width": 80
+        },
+        {
+            "header": "Batch No.",
+            "dataIndex": "lot",
+            "hidden": false,
+            "width": 130
+        }, 
+        {
+            "header": "SNP",
+            "dataIndex": "snp",
+            "hidden": false,
+            "width": 150
+        }, 
+        {
+            "header": "Supplier",
+            "dataIndex": "sunumber",
+            "hidden": false,
+            "width": 150
+        },           
+        {
+            "header": "Receipt No.",
+            "dataIndex": "custstorageposition",
+            "hidden": false,
+            "width": 130
+        }, 
+        {
+            "header": "Move Identification ",
+            "dataIndex": "movingsign",
+            "hidden": true,
+            "width": 130,
+            "renderer":function(val){
+                if (val) {
+                    return '是';
+                } else {
+                    return '否';
+                }
+                return val;
+            }    
+        },
+		{
+            "header": "MRF",
+            "dataIndex": "remark2",
+            "hidden": false,
+            "width": 130
+        },       
+        {
+            "header": "CCID",
+            "dataIndex": "remark3",
+            "hidden": false,
+            "width": 130
+        },
+        {
+             "header": "Outbound Remark",
+            "dataIndex": "remark",
+            "hidden": false,
+            "width": 130            
+        }, 
+        {
+            "header": "Operator",                                         
+            "dataIndex": 'user'            
+        },
+        {
+            "header": "Plate No.",
+            "dataIndex": "vehicledispatchinginfo",
+            "hidden": false,
+            "width": 130,
+            "renderer":function(v){
+                return v ==null || v.vehicleinfo ==null ? "" : v.vehicleinfo.name
+            }           
+        },
+        {
+             "header": "Delivery No.",
+            "dataIndex": "vehicledispatchinginfo",
+            "hidden": false,
+            "width": 130,
+            "renderer":function(v){
+                return v ==null ? "" : v.dispatchingno
+            }            
+        },
+        {
+            xtype: 'datecolumn',                                           
+            dataIndex: 'vehicledispatchinginfo',
+            text: 'Delivery Time',
+            format:'Y-m-d H:i:s',
+            width:130,
+            "renderer":function(v){
+                return v ==null ? "" : v.time
+            }   
+        },
+        {
+             "header": " Vehicle Type",
+            "dataIndex": "vehicledispatchinginfo",
+            "hidden": false,
+            "width": 130,
+            "renderer":function(v){
+                return v ==null || v.vehicleinfo ==null ? "" : v.vehicleinfo.type
+            }             
+        },
+        {
+             "header": "Driver ",
+            "dataIndex": "vehicledispatchinginfo",
+            "hidden": false,
+            "width": 130,
+            "renderer":function(v){
+                return v ==null || v.vehicleinfo ==null ? "" : v.vehicleinfo.driver
+            }            
+        },
+        {
+             "header": "Telephone",
+            "dataIndex": "vehicledispatchinginfo",
+            "hidden": false,
+            "width": 130,
+            "renderer":function(v){
+                return v ==null || v.vehicleinfo ==null ? "" : v.vehicleinfo.telephone
+            }              
+        },
+        {
+            xtype: 'datecolumn',                                           
+            dataIndex: 'vehicledispatchinginfo',
+            text: 'Signed Time',
+            format:'Y-m-d H:i:s',
+            width:130,
+            "renderer":function(v){
+                return v ==null ? "" : v.timeofreceipt
+            }  
+        },
+        {
+            "header":"Signed Receipt ",
+            "menuDisabled": true,
+            "xtype":'actioncolumn',
+            "hidden": false,
+            "width": 100,
+            items:[{
+                getClass: function(v, meta, rec) {
+                    var vehicledispatchinginfo = rec.get("vehicledispatchinginfo");
+                    if (vehicledispatchinginfo != null &&　!Ext.isEmpty(vehicledispatchinginfo.pod)) {
+                        return 'download-file';
+                    }
+                },
+                getTip: function(v, meta, rec) {
+                    var vehicledispatchinginfo = rec.get("vehicledispatchinginfo");
+                    if (vehicledispatchinginfo != null &&　!Ext.isEmpty(vehicledispatchinginfo.pod)) {
+                        return '';
+                    } else {
+                        return '下载签收单';
+                    }
+                },
+                handler: function(grid, rowIndex, colIndex) {
+                    var rec = grid.getStore().getAt(rowIndex),
+                        vehicledispatchinginfo = rec.get("vehicledispatchinginfo"),
+                        action = vehicledispatchinginfo == null || Ext.isEmpty(vehicledispatchinginfo.pod) ? '' : 'downloadpod';
+
+                    if(action == "downloadpod"){
+                        var extraParams = {};
+                        extraParams.filename = vehicledispatchinginfo.pod;
+
+                        var conn = Ext.create('Ext.data.Connection', {
+                            method: 'POST',
+                            extraParams : extraParams,
+                            timeout:600000
+                        });  
+
+                        conn.request({ 
+                            url: Pivots.core.Gobals.baseUrl + 'actions/ReportServices.ashx?action=0F28AB75403E4315A0947B2289743714',           
+                            callback: function (options, success, response) {
+                                if(success){
+                                    var r = new Ext.JSON.decode(response.responseText);
+                                    
+                                    if(r.success){                  
+                                        downloadurl=Pivots.core.Gobals.baseUrl + 'actions/ReportServices.ashx?action=D5D8D8D894064223BCEDB41D8BCCF2ED&extractioncode='+r.extractioncode;
+                                        window.location.href = downloadurl;               
+                                    }
+                                    else if(r.clienthandler!=null && r.clienthandler.length!=0){                    
+                                        Pivots.core.CommonFunction.exceptionHandler(r.clienthandler,r); 
+                                    }
+                                    else{
+                                        Pivots.core.CommonFunction.notifyMsgHandler(r);
+                                    }                   
+                                }
+                                else{
+                                    var reqst=response.status; 
+                                    if(reqst=='-1'){                  // 超时的状态码为 -1
+                                       Ext.Msg.getDialog().setWidth(500);
+                                       Ext.MessageBox.alert("提示","发送超时,可能存在网络异常,检查后请重试...");
+                                    }else{
+                                       Ext.Msg.alert('提示','处理失败！');                
+                                    }                   
+                                }
+                            }
+                        });
+                    }
+                }
+            }]
+        }      
+    ]
+}

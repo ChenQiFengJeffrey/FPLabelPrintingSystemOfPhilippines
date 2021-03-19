@@ -198,6 +198,11 @@ namespace FPLabelPrintingClient
                 Regex regex = new Regex(currentSN.Code);
                 if (!regex.IsMatch(box.Text))
                 {
+                    if (_snList.Exists(k => k.Key.Trim().ToUpper().Equals(box.Name.Trim().ToUpper())))
+                    {
+                        KeyValuePair<string, string> sn = _snList.FirstOrDefault(k => k.Key.Trim().ToUpper().Equals(box.Name.Trim().ToUpper()));
+                        _snList.Remove(sn);
+                    }
                     Speecher("Scan SN Label failed");
                     box.Text = "";
                     return;

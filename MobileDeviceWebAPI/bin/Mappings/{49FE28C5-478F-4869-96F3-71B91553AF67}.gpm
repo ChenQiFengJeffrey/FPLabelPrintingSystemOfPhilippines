@@ -1,0 +1,23 @@
+{
+	"fields":[
+		{"name": "id","type": "object"},
+		{"name": "asnno","type": "string"},
+		{"name": "iscompleted","type": "bool"},
+		{"name": "status","type": "string"},
+		{"name": "uploaddate","type": "date"},
+		{"name": "uploader","type": "auto"},
+		{"name": "warehouse","type": "auto"}
+    ],
+    "columns": [
+		{
+			'dataIndex': 'asnno',
+			'header':'ASN No.',
+			'width': 150
+		},
+		{
+			'dataIndex': 'status',
+			'header':'Status',
+			'width': 150
+		}    
+    ]
+}

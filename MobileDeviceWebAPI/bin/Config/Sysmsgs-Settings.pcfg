@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <sysmsg>
+    <msg level="System" code="10000" content="数据库结构需要更新。" />
+    <msg level="System" code="10001" content="系统出现未知错误，请联系管理员！" />
+    <msg level="System" code="10002" content="登陆已过期，请重新登陆" clienthandler="SessionExpired"/>
+    <msg level="Logical" code="10003" content="操作失败!"/>
+    <msg level="Logical" code="10004" content="没有绑定车辆信息"/>
+    <msg level="Logical" code="10005" content="数据异常：可能是仓库不存在"/>
+    <msg level="Logical" code="10006" content="数据异常：可能是客户不存在"/>
+    <msg level="Logical" code="10007" content="数据异常：可能是物料未备案"/>
+    <msg level="Logical" code="10008" content="数据异常：可能是库位号不存在"/>
+    <msg level="Logical" code="10009" content="添加的数据已存在!"/>
+    <msg level="Logical" code="10010" content="不支持该类型的报表!"/>
+    <msg level="Logical" code="10011" content="报表格式错误!"/>
+    <msg level="Logical" code="10012" content="箱型未确认,可能货柜描述中有未更新项,请确保货柜描述处于未更新状态!"/>
+    <msg level="Logical" code="10013" content="所选报表不适用当前记录(集)或该报表在此处不能打印，请检查后再打印"/>
+    <msg level="Logical" code="10014" content="数据异常，原因可能是：存放策略"/>
+    <msg level="Logical" code="10015" content="库存不足"/>
+    <msg level="Logical" code="10016" content="数据异常，原因可能是：包装"/>
+    <msg level="Logical" code="10017" content="数据异常，原因可能是：批次号"/>
+    <msg level="Logical" code="10018" content="数据异常，原因可能是：数量"/>
+    <msg level="Logical" code="10019" content="数据异常，原因可能是：SKU包装量"/>
+    <msg level="Logical" code="10020" content="数据异常，原因可能是：追溯信息已存在"/>
+    <msg level="Logical" code="10050" content="数据异常，原因可能是：容器号已存在"/>
+    <msg level="Logical" code="30000" content="选择的委托中必须含有一个主票，操作失败"/>
+    <msg level="Logical" code="30001" content="选择的委托或部分存在于单证系统中，操作失败"/>    <msg level="Logical" code="10021" content="处理中"/>
+    <msg level="Logical" code="20002" content="One or more states in the subitem can not be cancel"/>
+    <msg level="Logical" code="30002" content="操作记录中含有改配信息，但更新信息不全，所有操作不成功!"/>
+    <msg level="Logical" code="30003" content="一次仅能操作一票（含该票的分票），操作失败"/>
+    <msg level="Logical" code="30004" content="委托中的卸货港没有设置，操作失败"/>
+    <msg level="Logical" code="30005" content="该物料入库规格与备案规格不符"/>    
+    <msg level="Logical" code="50001" content="该任务无法指定设备，请按提示检查（原因：不存在|已完成|正有设备进行任务)"/>
+    <msg level="Logical" code="50002" content="设备已被占用，无法分配到新任务"/>
+    <msg level="Logical" code="50003" content="设备不存在"/>
+    <msg level="Logical" code="50004" content="该任务无法取消分配，请按提示检查（原因：不存在|该任务尚未分配|已完成)"/>
+    <msg level="Logical" code="50005" content="任务无法撤消，请按提示检查（原因：不存在|已完成)"/>
+    <msg level="Logical" code="50006" content="任务号已存在，请检查后再导入"/>
+    <msg level="Logical" code="50007" content="分拣区上已没有合适的库存存放，请检查后再导入"/>
+    <msg level="Logical" code="50008" content="上传数据中含有系统没有备案的物料号"/>
+    <msg level="Logical" code="50009" content="上传数据中含有未备案物料或包装规格的数据。"/>
+    <msg level="Logical" code="50010" content="客户信息已改变或该客户不存在"/>
+    <msg level="Logical" code="50011" content="该枪与任务所属仓库信息不一致"/>
+    <msg level="Logical" code="50012" content="未指定出库区"/>
+    <msg level="Logical" code="50013" content="出库堆存区上的批次号为{0}物料{1}库存不足"/>
+    <msg level="Logical" code="50014" content="优先项与搜索项不符，不能生成任务。"/>
+    <msg level="Logical" code="50015" content="库存不足，不能生成任务。"/>
+    <msg level="Logical" code="50016" content="任务号已存在"/>
+    <msg level="Logical" code="50017" content="当前库位存在其他批次号的订单"/>
+    <msg level="Logical" code="50018" content="{0}库位号存在相同批次号的订单"/>
+  </sysmsg>
+</manifest>
