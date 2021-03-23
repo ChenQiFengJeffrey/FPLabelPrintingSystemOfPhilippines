@@ -18,3 +18,4 @@ D:\Projects\Philippines\FPLabelPrintingSystemOfPhilippines_GitHub\Pivots.Network
 D:\Projects\Philippines\FPLabelPrintingSystemOfPhilippines_GitHub\Pivots.Network\bin\Debug\Newtonsoft.Json.xml
 D:\Projects\Philippines\FPLabelPrintingSystemOfPhilippines_GitHub\Pivots.Network\obj\Debug\Pivots.Network.dll
 D:\Projects\Philippines\FPLabelPrintingSystemOfPhilippines_GitHub\Pivots.Network\obj\Debug\Pivots.Network.pdb
+D:\Projects\Philippines\FPLabelPrintingSystemOfPhilippines_GitHub\Pivots.Network\obj\Debug\Pivots.Network.csprojResolveAssemblyReference.cache
