@@ -197,7 +197,9 @@
     <None Include="bin\Release\FPLabelPrintingSystemOfPhilippines.vshost.exe.config" />
     <None Include="bin\Release\FPLabelPrintingSystemOfPhilippines.vshost.exe.manifest" />
     <None Include="bin\Release\LabelPrint.db" />
-    <None Include="log4net.config" />
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\FPLabelPrintingSystemOfPhilippines.csproj.GenerateResource.Cache" />

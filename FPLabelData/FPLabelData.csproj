@@ -46,6 +46,15 @@
   <ItemGroup>
     <Compile Include="DTO\ItemCodeSNDTO.cs" />
     <Compile Include="DTO\ItemCodeSN_UploadDTO.cs" />
+    <Compile Include="Entity\ExtractInventoryTool_BOM.cs" />
+    <Compile Include="Entity\ExtractInventoryTool_BOMImportRule.cs" />
+    <Compile Include="Entity\ExtractInventoryTool_Inventory.cs" />
+    <Compile Include="Entity\ExtractInventoryTool_Material.cs" />
+    <Compile Include="Entity\ExtractInventoryTool_Client.cs" />
+    <Compile Include="Entity\ExtractInventoryTool_MaterialExtension.cs" />
+    <Compile Include="Entity\ExtractInventoryTool_PickUpDemandDetails.cs" />
+    <Compile Include="Entity\ExtractInventoryTool_ProductionPlan.cs" />
+    <Compile Include="Entity\ExtractInventoryTool_ProductionPlanImportRule.cs" />
     <Compile Include="Entity\ItemCodeSN.cs" />
     <Compile Include="FinishedProductLabelDTO.cs" />
     <Compile Include="GoodSet.cs" />

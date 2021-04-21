@@ -16,5 +16,6 @@ D:\Projects\Philippines\FPLabelPrintingSystemOfPhilippines_GitHub\Pivots.Network
 D:\Projects\Philippines\FPLabelPrintingSystemOfPhilippines_GitHub\Pivots.Network\bin\Release\System.Web.Http.dll
 D:\Projects\Philippines\FPLabelPrintingSystemOfPhilippines_GitHub\Pivots.Network\bin\Release\System.Net.Http.Formatting.dll
 D:\Projects\Philippines\FPLabelPrintingSystemOfPhilippines_GitHub\Pivots.Network\bin\Release\Newtonsoft.Json.xml
+D:\Projects\Philippines\FPLabelPrintingSystemOfPhilippines_GitHub\Pivots.Network\obj\Release\Pivots.Network.csprojResolveAssemblyReference.cache
 D:\Projects\Philippines\FPLabelPrintingSystemOfPhilippines_GitHub\Pivots.Network\obj\Release\Pivots.Network.dll
 D:\Projects\Philippines\FPLabelPrintingSystemOfPhilippines_GitHub\Pivots.Network\obj\Release\Pivots.Network.pdb

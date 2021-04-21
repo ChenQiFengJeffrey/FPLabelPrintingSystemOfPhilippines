@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{651132BC-77BF-4102-B341-0317A9E4C066}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExtractInventoryTool</RootNamespace>
+    <AssemblyName>ExtractInventoryTool</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.2\lib\net45\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.2\lib\net45\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.2\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.2\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\LabelPrintDAL\bin\Release\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColumnNameConfig\BOMConfig.cs" />
+    <Compile Include="ColumnNameConfig\ClientConfig.cs" />
+    <Compile Include="ColumnNameConfig\InventoryConfig.cs" />
+    <Compile Include="ColumnNameConfig\MaterialConfig.cs" />
+    <Compile Include="ColumnNameConfig\PickUpDemandConfig.cs" />
+    <Compile Include="ColumnNameConfig\PlanConfig.cs" />
+    <Compile Include="EditorForm\Form_BOMEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorForm\Form_BOMEditor.Designer.cs">
+      <DependentUpon>Form_BOMEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorForm\Form_BOMUploader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorForm\Form_BOMUploader.Designer.cs">
+      <DependentUpon>Form_BOMUploader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorForm\Form_ClientEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorForm\Form_ClientEditor.Designer.cs">
+      <DependentUpon>Form_ClientEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorForm\Form_InventoryUploader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorForm\Form_InventoryUploader.Designer.cs">
+      <DependentUpon>Form_InventoryUploader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorForm\Form_MaterialEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorForm\Form_MaterialEditor.Designer.cs">
+      <DependentUpon>Form_MaterialEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorForm\Form_ProductionPlanUploader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorForm\Form_ProductionPlanUploader.Designer.cs">
+      <DependentUpon>Form_ProductionPlanUploader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabForm\Form_BOMTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabForm\Form_BOMTab.Designer.cs">
+      <DependentUpon>Form_BOMTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabForm\Form_ClientTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabForm\Form_ClientTab.Designer.cs">
+      <DependentUpon>Form_ClientTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabForm\Form_InventoryTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabForm\Form_InventoryTab.Designer.cs">
+      <DependentUpon>Form_InventoryTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabForm\Form_MaterialTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabForm\Form_MaterialTab.Designer.cs">
+      <DependentUpon>Form_MaterialTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabForm\Form_PickUpDemandTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabForm\Form_PickUpDemandTab.Designer.cs">
+      <DependentUpon>Form_PickUpDemandTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabForm\Form_ProductionPlanTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabForm\Form_ProductionPlanTab.Designer.cs">
+      <DependentUpon>Form_ProductionPlanTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolForm\LoadingHelper.cs" />
+    <Compile Include="ToolForm\MarqueeProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolForm\MarqueeProgressBar.Designer.cs">
+      <DependentUpon>MarqueeProgressBar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EditorForm\Form_BOMEditor.resx">
+      <DependentUpon>Form_BOMEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorForm\Form_BOMUploader.resx">
+      <DependentUpon>Form_BOMUploader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorForm\Form_ClientEditor.resx">
+      <DependentUpon>Form_ClientEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorForm\Form_InventoryUploader.resx">
+      <DependentUpon>Form_InventoryUploader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorForm\Form_MaterialEditor.resx">
+      <DependentUpon>Form_MaterialEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorForm\Form_ProductionPlanUploader.resx">
+      <DependentUpon>Form_ProductionPlanUploader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TabForm\Form_BOMTab.resx">
+      <DependentUpon>Form_BOMTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabForm\Form_ClientTab.resx">
+      <DependentUpon>Form_ClientTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabForm\Form_InventoryTab.resx">
+      <DependentUpon>Form_InventoryTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabForm\Form_MaterialTab.resx">
+      <DependentUpon>Form_MaterialTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabForm\Form_PickUpDemandTab.resx">
+      <DependentUpon>Form_PickUpDemandTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabForm\Form_ProductionPlanTab.resx">
+      <DependentUpon>Form_ProductionPlanTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolForm\MarqueeProgressBar.resx">
+      <DependentUpon>MarqueeProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomWinFormControl\CustomWinFormControl.csproj">
+      <Project>{FB510D17-624F-4E63-964D-D5927F761E55}</Project>
+      <Name>CustomWinFormControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FPLabelData\FPLabelData.csproj">
+      <Project>{d4c9124f-5537-4cbf-9d47-20c0571ea57f}</Project>
+      <Name>FPLabelData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabelPrintDAL\LabelPrintDAL.csproj">
+      <Project>{fd73fc8f-433a-459d-864e-6ed7c043eb6e}</Project>
+      <Name>LabelPrintDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

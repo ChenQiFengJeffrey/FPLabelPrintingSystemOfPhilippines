@@ -20,7 +20,7 @@ namespace LabelPrintDAL
             if (!string.IsNullOrEmpty(dbName))
             {
                 try { SQLiteConnection.CreateFile(dbName); }
-                catch (Exception) { throw; }
+                catch (Exception ex) { throw ex; }
             }
         }
 
@@ -53,11 +53,11 @@ namespace LabelPrintDAL
                                 affectedRows = cmd.ExecuteNonQuery();
                                 tran.Commit();
                             }
-                            catch (Exception) { tran.Rollback(); throw; }
+                            catch (Exception ex) { tran.Rollback(); throw ex; }
                         }
                     }
                 }
-                catch { throw; }
+                catch (Exception ex) { throw ex; }
                 finally
                 {
                     conn.Clone();
@@ -92,11 +92,11 @@ namespace LabelPrintDAL
                                 }
                                 tran.Commit();
                             }
-                            catch (Exception) { tran.Rollback(); throw; }
+                            catch (Exception ex) { tran.Rollback(); throw ex; }
                         }
                     }
                 }
-                catch { throw; }
+                catch (Exception ex) { throw ex; }
                 finally
                 {
                     conn.Clone();
@@ -125,7 +125,7 @@ namespace LabelPrintDAL
                         }
                         return cmd.ExecuteScalar();
                     }
-                    catch (Exception) { throw; }
+                    catch (Exception ex) { throw ex; }
                 }
             }
         }
@@ -150,7 +150,7 @@ namespace LabelPrintDAL
                     SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
                     DataTable data = new DataTable();
                     try { adapter.Fill(data); }
-                    catch (Exception) { throw; }
+                    catch (Exception ex) { throw ex; }
                     finally
                     {
                         connection.Clone();
@@ -179,7 +179,7 @@ namespace LabelPrintDAL
                 connection.Open();
                 return command.ExecuteReader(CommandBehavior.CloseConnection);
             }
-            catch (Exception) { throw; }
+            catch (Exception ex) { throw ex; }
         }
 
         /// <summary> 
@@ -195,7 +195,7 @@ namespace LabelPrintDAL
                     connection.Open();
                     return connection.GetSchema("TABLES");
                 }
-                catch (Exception) { throw; }
+                catch (Exception ex) { throw ex; }
             }
         }
 

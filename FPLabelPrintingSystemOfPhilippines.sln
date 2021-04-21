@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileDeviceWebAPI", "Mobil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pivots.Network", "Pivots.Network\Pivots.Network.csproj", "{BED71C39-31E4-463B-9CA7-3E8FB30D523A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractInventoryTool", "ExtractInventoryTool\ExtractInventoryTool.csproj", "{651132BC-77BF-4102-B341-0317A9E4C066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomWinFormControl", "CustomWinFormControl\CustomWinFormControl.csproj", "{FB510D17-624F-4E63-964D-D5927F761E55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{BED71C39-31E4-463B-9CA7-3E8FB30D523A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BED71C39-31E4-463B-9CA7-3E8FB30D523A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BED71C39-31E4-463B-9CA7-3E8FB30D523A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{651132BC-77BF-4102-B341-0317A9E4C066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{651132BC-77BF-4102-B341-0317A9E4C066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{651132BC-77BF-4102-B341-0317A9E4C066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{651132BC-77BF-4102-B341-0317A9E4C066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB510D17-624F-4E63-964D-D5927F761E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB510D17-624F-4E63-964D-D5927F761E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB510D17-624F-4E63-964D-D5927F761E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB510D17-624F-4E63-964D-D5927F761E55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
